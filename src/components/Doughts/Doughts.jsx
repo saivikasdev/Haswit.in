@@ -8,8 +8,11 @@ import { useEffect } from "react";
 import { getDoc } from "firebase/firestore";
 import Cookies from 'universal-cookie';
 import { onAuthStateChanged } from 'firebase/auth';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { authentication } from "../../firebase-config";
 import { collection,query,onSnapshot ,Timestamp} from "firebase/firestore";
+import Loader from "../Loader";
 const cookies = new Cookies();
 const Doughts = () => {
   const [currentuser, setcurrentuser] = useState(false)
@@ -20,6 +23,7 @@ const Doughts = () => {
 const [dought, setdought] = useState('')
   const [Loading, setLoading] = useState(false)
   const [doughts, setdoughts] = useState([])
+  const [Searchtext, setSearchtext] = useState('')
 const date = new Date();
 const showTime = date.getDate()+'/'+(date.getMonth()+1)+' '+date.getHours() 
     + ':' + date.getMinutes() 
@@ -31,6 +35,7 @@ const showTime = date.getDate()+'/'+(date.getMonth()+1)+' '+date.getHours()
 
 
   const Setdata = async (e) => {
+    setLoading(true)
     e.preventDefault();
     if (dought.length > 15) {
       await setDoc(
@@ -48,10 +53,16 @@ const showTime = date.getDate()+'/'+(date.getMonth()+1)+' '+date.getHours()
         { merge: true }
       ).then(() => {
         setdought_form(false);
+        toast('Dought posted successfully', {
+          position: toast.POSITION.BOTTOM_LEFT,
+          className: 'toast-message'
+      })
       });
     } else {
       
     }
+    
+    setLoading(false)
   };
 
 
@@ -121,12 +132,29 @@ const showTime = date.getDate()+'/'+(date.getMonth()+1)+' '+date.getHours()
       <div className="Header_doughts">
         <div className="Doughts_title">Doughts</div>
         <div className="Header_right">
+
         <div className="Search">
           <div className="Search_input">
-            <input type="text" placeholder="Search"/>
+            <input type="text" placeholder="Search" onChange={
+              (e)=>{
+                setSearchtext(e.target.value);
+
+
+              }
+            }/>
           </div>
-          <UilSearch />
+          <UilSearch onClick={
+            (e)=>{
+
+              // e.preventDefault();
+              // setdoughts(doughts.filter((dought)=>dought.Dought.toLowerCase().includes(Searchtext.toLowerCase)));
+              // console.log(doughts)
+              // console.log('/////////')
+            }
+          }/>
         </div>
+
+
         <div className="Post_dought" onClick={()=>{
           setdought_form(!dought_form)
         }}>Post My Dought</div>
@@ -143,6 +171,8 @@ const showTime = date.getDate()+'/'+(date.getMonth()+1)+' '+date.getHours()
             placeholder="Your dought"
             rows="10"
             cols="130"
+            minLength="15"
+            required
           ></textarea>
             
 
@@ -158,10 +188,21 @@ const showTime = date.getDate()+'/'+(date.getMonth()+1)+' '+date.getHours()
       <div className="Doughts_list">
 
       {doughts.length > 0 &&
-        doughts.map((dought, index) => (
+        doughts.filter((val)=>{
+          if(Searchtext == ""){
+return val
+          }
+          else if(val.Dought.toLowerCase().includes(Searchtext.toLowerCase())){
+return val
+          }
+        }).map((dought, index) => (
           <Dought_list_tile dought={dought}/>
         ))}
       </div>
+        <ToastContainer />
+        {
+      (Loading)?
+      <Loader/>:null}
     </div>
   );
 };

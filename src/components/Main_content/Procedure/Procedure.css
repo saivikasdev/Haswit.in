@@ -1,0 +1,67 @@
+.Procedure {
+   width: 88vw;
+   height: 70vh;
+   background-color: #222222;
+   margin: auto;
+   margin-top: 20px;
+   border-radius: 20px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-evenly;
+}
+.Procedure_row{
+   
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
+   width: 70vw;
+}
+.Step{
+   width: 20vw;
+}
+.Procedure_title{
+   
+   font-size: 2.5vw;
+   font-weight: bolder;
+   color: rgb(123, 0, 255) ;
+}
+.Step_no{
+
+   font-size: 4.5vw;
+   font-weight: bolder;
+}
+.Step_title{
+
+   font-size: 17px;
+   font-weight: bolder;
+   color: rgb(123, 0, 255) ;
+}
+.Step_desc{
+
+   font-size: 14px;
+   font-weight: 400;
+   color: rgba(240, 248, 255, 0.788);
+}
+
+@media screen and (max-width: 800px) {
+   
+.Procedure_row{
+   flex-direction: column;
+   margin-left: 20px;
+}
+.Step{
+   width: 74vw;
+   margin: 20px;
+}
+.Procedure {
+   width: 75vw;
+   margin-left: 0px;
+   height: 210vw;
+}
+
+.Procedure_title{
+   font-size: 3.5vw;
+}
+}

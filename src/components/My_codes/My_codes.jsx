@@ -6,6 +6,7 @@ import Cookies from "universal-cookie";
 import { db } from "../../firebase-config";
 import "./My_codes.css";
 import My_code_card from "./My_code_card/My_code_card";
+import Loader from "../Loader";
 const My_codes = () => {
 const [Loading, setLoading] = useState(false)
 const [Codes, setCodes] = useState([])
@@ -40,7 +41,9 @@ const cookies = new Cookies();
 <My_code_card Code={Code}/>
 ))}
      </div>
-
+     {
+      (Loading)?
+      <Loader/>:null}
     </div>
   );
 };

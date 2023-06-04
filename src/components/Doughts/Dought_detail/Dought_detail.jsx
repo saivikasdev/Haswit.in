@@ -5,6 +5,9 @@ import Profile_pic from '../../../images/bitmoji.png';
 import Cookies from "universal-cookie";
 import { doc, setDoc,getDoc ,collection,query,onSnapshot,} from 'firebase/firestore';
 import { db } from '../../../firebase-config';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Loader from '../../Loader';
 const Dought_detail = () => {
     
   const cookies = new Cookies();
@@ -76,6 +79,11 @@ const fetch_profile_pic = async () => {
     
           },{ merge: true }).then(() => {
             setanswer_form(!answer_form)
+
+            toast('Answer posted successfully', {
+              position: toast.POSITION.BOTTOM_LEFT,
+              className: 'toast-message'
+          })
     
           })
             
@@ -90,8 +98,9 @@ const fetch_profile_pic = async () => {
         <div className="Dought_detail_title">
         <div className="dought_title_container">
         <div className="dought_title_row">
+          <div className="dought">
         {cookies.get('dought')
-        }
+        }</div>
         <div className="no_of_answers">
             {answers.length} Answers
         </div>
@@ -124,6 +133,8 @@ const fetch_profile_pic = async () => {
             placeholder="Your answer"
             rows="10"
             cols="130"
+            minLength="15"
+            required
           ></textarea>
             
 
@@ -136,7 +147,9 @@ const fetch_profile_pic = async () => {
        <div className="Answers_">
        {answers.length > 0 && answers.map((answer,index) => (
         <div className="Answer_tile">
+            <div className="answer">
             {answer.Answer}
+            </div>
             <div className="Answered_student_">
             <div className="Doughted_student_pic">
             <img src= {answer.profile_pic} className="profile_image__"/>
@@ -148,6 +161,10 @@ const fetch_profile_pic = async () => {
         </div>
 ))}
        </div>
+        <ToastContainer />
+        {
+      (Loading)?
+      <Loader/>:null}
     </div>
   )
 }

@@ -7,6 +7,8 @@ import { UilWhatsapp } from '@iconscout/react-unicons';
 import { UilLocationPoint } from '@iconscout/react-unicons';
 import { UilEdit } from '@iconscout/react-unicons'
 import Top_row from './Top_row/Top_row';
+
+import ReactWhatsapp from 'react-whatsapp';
 import About_me from './About_me/About_me';
 import Student_current from './Student_current/Student_current';
 import { useEffect } from 'react';
@@ -38,7 +40,6 @@ const Profile_page = (currentUser) => {
           </div>
 
           </Link>
-
 
 
         </div>

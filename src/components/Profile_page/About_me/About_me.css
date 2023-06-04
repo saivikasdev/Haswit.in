@@ -9,6 +9,9 @@
     display: flex;
     position: relative;
   flex-direction: column;
+  padding: 20px;
+  word-break: break-all;
+  white-space: normal;
 }
 .About_me:hover{
     background-color: rgb(150, 38, 255);

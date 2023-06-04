@@ -121,7 +121,7 @@
   padding: 20px;
   width: 50vh;
   position: absolute;
-  top: 5%;
+  top: 1%;
   left: 70%;
   border-radius: 5px;
   max-height: 50vh;
@@ -131,6 +131,10 @@
 }
 
 .Notification{
+
+white-space:normal;
+  word-break:break-all;
+  width: 43vh;
   background-color: #00000086;
   margin-bottom: 10px;
   padding: 20px;
@@ -152,6 +156,6 @@
 @media screen and (max-width: 1200px) {
 
   .notification_container{
-    left: 80%;
+    left: -20%;
   }
   }

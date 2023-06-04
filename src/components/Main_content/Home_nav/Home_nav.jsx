@@ -8,7 +8,7 @@ import { useState } from 'react';
 import { UilTimes } from '@iconscout/react-unicons'
 import { db } from '../../../firebase-config';
 import Cookies from 'universal-cookie';
-import { collection ,query,onSnapshot, setDoc,doc, where,getDoc ,deleteDoc} from 'firebase/firestore';
+import { collection ,query,onSnapshot, setDoc,doc, where,getDoc ,deleteDoc, updateDoc} from 'firebase/firestore';
 function Home_nav() {
 
 
@@ -21,18 +21,21 @@ function Home_nav() {
 
   const [profile_pic, setprofile_pic] = useState('')
 
-
+const [Old_notifications, setOld_notifications] = useState([]);
+  const [points, setpoints] = useState()
   const fetchprofile_pic = async () => {
     const docRef = doc(db, "Students", cookies.get('user').phoneNumber);
     const docSnap = await getDoc(docRef);
     console.log("Document data:", docSnap.data().profile_pic);
     if (docSnap.exists()) {
       setprofile_pic(docSnap.data().profile_pic)
+      setpoints(docSnap.data().Points)
     } else {
       // doc.data() will be undefined in this case
       console.log("No such document!");
     }
   }
+
 
 
   const fetchData = async () => {
@@ -46,6 +49,19 @@ function Home_nav() {
     });
   
   };
+
+
+  const fetchNotifications = async () => {
+    const docRef = doc(db, "Students", cookies.get('user').phoneNumber);
+    const docSnap = await getDoc(docRef);
+    console.log("Document data:", docSnap.data().profile_pic);
+    if (docSnap.exists()) {
+      setOld_notifications(docSnap.data().Notifications)
+    } else {
+      // doc.data() will be undefined in this case
+      console.log("No such document!");
+    }
+  }
 
   const fetchNote = async () => {
 
@@ -63,7 +79,11 @@ function Home_nav() {
   useEffect(() => {
     fetchData();
     fetchNote();
+    fetchNotifications();
   }, []);
+
+
+
 
   fetchprofile_pic();
 
@@ -83,14 +103,23 @@ function Home_nav() {
                 <UisFavorite color="#bdbdbd"/>
 
             </div>
-            <div className="count">28</div>
+            <div className="count">{points}</div>
         </div>
             </Link>
-   <div className="notifications" onClick={() => {
+   <div className="notifications" onClick={async () => {
     setnotifications_container(!notifications_container)
+    await updateDoc(
+      doc(db, 
+        "Students", cookies.get('user').phoneNumber),
+      {
+        Notifications:notifications.length
+      },
+      { merge: true }
+    ).then(async () => {
+    });
   
   }}>
-   <Badge badgeContent={notifications.length} color="primary">
+   <Badge badgeContent={(Old_notifications)?Number(notifications.length)- Old_notifications:Number(notifications.length)} color="primary">
    <UilBell color="#bdbdbd" />
    </Badge>
    </div>
@@ -107,7 +136,15 @@ function Home_nav() {
             Notifications
             <div className="close">
             <UilTimes onClick={
-              () => setnotifications_container(!notifications_container)
+              async () => {setnotifications_container(!notifications_container)
+               
+
+
+
+              
+              
+              
+              }
             }/>
             </div>
           </div>

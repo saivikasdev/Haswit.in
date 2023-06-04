@@ -3,6 +3,7 @@ import './Jobs.css'
 import Job_card from './Job_card/Job_card'
 import { db } from '../../firebase-config';
 import { doc, setDoc ,query,collection,onSnapshot } from "firebase/firestore";
+import Loader from '../Loader';
 const Jobs = () => {
 const [Jobs, setJobs] = useState([])
 
@@ -41,6 +42,9 @@ const [loading, setLoading] = useState(false);
         ))}
 
 </div>
+{
+      (loading)?
+      <Loader/>:null}
     </div>
   )
 }

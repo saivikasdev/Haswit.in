@@ -18,8 +18,16 @@
   .gap{
     display: flex;
     max-width: 4.5vw;
-    min-height: 200vh;
     min-width: 100px;
+  }
+  .Row{
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    margin-left: 2.5vw;
+    width: 87vw;
+    align-items: center;
+    justify-content: space-between;
   }
   @media screen and (max-width: 1200px) {
     .gap{
@@ -27,6 +35,12 @@
     }
     .FAB{
       left: 80%;
+    }
+    .Row{
+      flex-direction: column;
+      width: 80vw;
+      margin: 0px;
+      margin-left: 0px;
     }
     }
 

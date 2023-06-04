@@ -12,6 +12,7 @@ import { authentication } from '../../../firebase-config';
 import { collection ,query, onSnapshot ,doc,getDoc } from 'firebase/firestore';
 import { db } from '../../../firebase-config';
 import Cookies from 'universal-cookie';
+import Loader from '../../Loader';
 const Top_row = () => {
   
   const cookies = new Cookies();
@@ -25,7 +26,7 @@ const [whatsapp, setwhatsapp] = useState('')
 const [address, setaddress] = useState('')
 const [profile_pic, setprofile_pic] = useState('')
   const fetchDetails = async () => {
-    
+    setLoading(true)
 
     const docRef = doc(db, "Students", cookies.get('user').phoneNumber);
     const docSnap = await getDoc(docRef);
@@ -47,7 +48,7 @@ const [profile_pic, setprofile_pic] = useState('')
     }
     
     console.log("No such document!");
-  
+    setLoading(false)
   };
 
 
@@ -57,12 +58,12 @@ const [profile_pic, setprofile_pic] = useState('')
     });
 
 
+    fetchDetails();
 
 
   }, [])
   
   
-  fetchDetails();
   return (
     <div className="Top_row">
         <div className="top_row">
@@ -92,12 +93,6 @@ const [profile_pic, setprofile_pic] = useState('')
               
               {cookies.get('user').phoneNumber}
             </div>
-            <div className="gmail">
-            <div className="gmail_icon">
-                <UilEnvelope size="30px"/>
-                </div>
-              {gmail}
-            </div>
             <div className="whatsapp_number">
               <div className="whatsapp_number_icon">
                 <UilWhatsapp size="30px"/>
@@ -114,6 +109,9 @@ const [profile_pic, setprofile_pic] = useState('')
 
           </div>
           </div>
+          {
+      (Loading)?
+      <Loader/>:null}
     </div>
   )
 }

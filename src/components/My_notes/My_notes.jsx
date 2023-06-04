@@ -6,6 +6,7 @@ import Cookies from 'universal-cookie';
 import { collection,query,onSnapshot } from "firebase/firestore";
 import { db } from "../../firebase-config";
 import { useEffect } from "react";
+import Loader from "../Loader";
 const My_notes = () => {
   const [Notes, setNotes] = useState([])
   const [Loading, setLoading] = useState(false)
@@ -40,6 +41,9 @@ const My_notes = () => {
 <My_note_card Note={Note}/>
 ))}
      </div>
+     {
+      (Loading)?
+      <Loader/>:null}
     </div>
   );
 };

@@ -12,7 +12,6 @@
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .Test_pending{
-  
   background-color: #292929;
   padding: 20px;
   margin-top: 20px;
@@ -24,12 +23,15 @@
   border-radius: 30px;
 }
 .write_now_button{
+  min-width: 100px;
 background-color: blueviolet;
 padding: 10px;
 border-radius: 30px;
+color: rgb(255, 255, 255);
 
 }
 .write_now_button:hover{
+  color: aliceblue;
   cursor: pointer;
   background-color: rgb(82, 0, 158);
   padding: 10px;
@@ -43,10 +45,23 @@ border-radius: 30px;
   width: 78vw;
   }
   .write_now_button{
+    color: aliceblue;
     font-weight: 600;
     text-align: center;
-    width: 100px;
+    width: 80px;
     font-size: 10px;
-    margin-left: 5px;
+  }
+  .Test_pending{
+    width: 80vw;
+  
+    background-color: #292929;
+    padding: 15px;
+    margin-top: 10px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 25px;
   }
 }

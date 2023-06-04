@@ -51,6 +51,12 @@
   display: flex;
   height: 290px;
 }
+.Calender_month{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
 @media screen and (max-width: 1200px) {
   .Left_mini_calender_container {
     margin-left: 0px;
@@ -62,6 +68,19 @@
 
   .Current_sessions {
     width: 77vw;
+  }
+  .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 57vw;
+    align-items: center;
+  }
+  .Calender_month{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1px;
   }
 }
 

@@ -5,6 +5,8 @@ import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { db } from '../../../firebase-config';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Note_detail = () => {
   const [Note, setNote] = useState([])
   const [New_note, setNew_note] = useState(Note.note)
@@ -38,6 +40,10 @@ const Note_detail = () => {
           },
           { merge: true }
         ).then(() => {
+          toast('Note saved', {
+          position: toast.POSITION.BOTTOM_LEFT,
+          className: 'toast-message'
+      })
         })
     }
 
@@ -74,9 +80,12 @@ const Note_detail = () => {
           placeholder="Note something"
           rows="10"
           cols="130"
+            minLength="15"
+            required
         ></textarea>
 <button type="submit" className='save_note'>Save note</button>
    </form>
+        <ToastContainer />
   </div>
   )
 }

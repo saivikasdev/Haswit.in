@@ -1,7 +1,8 @@
 .My_code_card{
-
+color: #ffffff;
 }
-
+.My_code_card:hover{
+}
   /* CARDS */
   
   .cards {

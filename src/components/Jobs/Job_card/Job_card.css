@@ -2,7 +2,8 @@
     background-color: #222222;
     border: 1px solid rgba(255, 255, 255, 0.363);
     width: 25vw;
-    min-height: 90vh;
+    min-height: 110vh;
+    max-height: 12vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,7 +40,9 @@
     justify-content: space-evenly;
 }
 .Job_desc{
-    width: 70%;
+    word-wrap: break-word;
+    white-space: normal;
+    width: 20vw;
     
     color: rgba(255, 255, 255, 0.476);
 }
@@ -72,6 +75,7 @@
 @media (max-width: 800px) {
     .Job_card{
         width: 75vw;
+        padding: 20px;
     }
     .Eligible_stu_table{
         width: 90%;

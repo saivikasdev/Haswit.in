@@ -4,6 +4,7 @@ import Project_card from './Project_card/Project_card'
 import { useState ,useEffect } from "react";
 import { collection, query, where, getDocs,onSnapshot } from "firebase/firestore";
 import { db } from '../../firebase-config';
+import Loader from '../Loader';
 const Projects = () => {
   const [loading, setLoading] = useState(false);
   const [projects, setprojects] = useState([]);
@@ -18,6 +19,7 @@ const Projects = () => {
       });
       setprojects([...Projects]);
        setLoading(false);
+       console.log(projects);
     });
   
   };
@@ -39,7 +41,9 @@ const Projects = () => {
         ))}
         </div>
  
-
+        {
+      (loading)?
+      <Loader/>:null}
     </div>
   )
 }

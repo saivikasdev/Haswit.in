@@ -1,0 +1,61 @@
+.Adv {
+   width: 88vw;
+   height: 90vh;
+   background-color: #222222;
+   margin: auto;
+   margin-top: 20px;
+   border-radius: 20px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-evenly;
+}
+.Adv_title{
+   
+   font-size: 3vw;
+   font-weight: bolder;
+   color: rgb(123, 0, 255) ;
+}
+.Row_{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-evenly;
+   width: 80vw;
+}
+.Adv_num{
+   font-size: 5vw;
+   font-weight: 600;
+   color: rgb(123, 0, 255) ;
+}
+.Adv_block_title{
+   
+   font-size: 17px;
+   font-weight: 600;
+   color: rgba(177, 177, 177, 0.63) ;
+}
+.Adv_block_desc{
+   width: 20vw;
+   font-size: 15px;
+}
+
+@media screen and (max-width: 800px) {
+   .Row_{
+      flex-direction: column;
+      width: 70vw;
+   }
+   .Adv{
+      height: 270vw;
+      width: 75vw;
+      margin-left: 0px;
+   }
+   
+.Adv_num{
+   font-size: 8vw;
+}
+
+.Adv_title{
+   font-size: 6vw;
+   margin: 10px;
+}
+}

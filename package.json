@@ -1,11 +1,12 @@
 {
   "name": "haswit",
   "version": "0.1.0",
-  "homepage" : "https://saivikasdev.github.io/Haswit_main",
+  "homepage": "https://saivikasdev.github.io/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@green-api/whatsapp-api-client": "^0.3.30",
     "@iconscout/react-unicons": "^1.1.6",
     "@iconscout/react-unicons-solid": "^0.0.3",
     "@mui/material": "^5.11.7",
@@ -15,24 +16,33 @@
     "@testing-library/user-event": "^13.5.0",
     "classnames": "^2.3.2",
     "firebase": "^9.17.1",
+    "fs": "^0.0.1-security",
     "mdb-react-ui-kit": "^5.1.0",
+    "moment": "^2.29.4",
+    "moment-timezone": "^0.5.43",
     "react": "^18.2.0",
     "react-ace": "^10.1.0",
+    "react-app-rewired": "^2.2.1",
     "react-dom": "^18.2.0",
     "react-floating-button": "^1.1.1",
+    "react-phone-input-2": "^2.15.1",
     "react-router-dom": "^6.8.0",
     "react-scripts": "5.0.1",
+    "react-toastify": "^9.1.1",
+    "react-whatsapp": "^0.3.0",
     "styled-components": "^5.3.6",
+    "twilio": "^4.8.0",
     "universal-cookie": "^4.0.4",
+    "wbm": "^1.1.16",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject",
-    "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

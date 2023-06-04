@@ -1,22 +1,8 @@
-.Calender {
-  width: 60vw;
-  display: grid;
-  gap: 10px;
-  background-color: #222222;
-  padding-left: 70px;
-  padding-top: 15px;
-  grid-template-columns: 120px 120px 120px 120px 120px 120px 120px;
-  grid-template-rows: 40px 120px 120px 120px 120px 120px 120px 120px;
-  height: 81vh;
-  border-radius: 10px;
-  margin-right: 5vw;
-}
-.date {
+
+.date__{
   margin: 10px;
 }
-.Calender_row {
-  display: flex;
-}
+
 .My_journey_title {
   
   font-size: large;
@@ -24,44 +10,23 @@
   margin-left: 35px;
   margin-top: 35px;
 }
-.Sessions_table {
-  border-radius: 10px;
-  margin-left: 0.0vw;
-  height: 82vh;
-  width: 27vw;
-  background-color: #222222;
-  overflow-y: scroll;
-}
-.Sessions_table::-webkit-scrollbar {
-  display: none;
-}
-.Session_title {
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.835);
-  font-weight: 400;
-  font-size: 14px;
-}
-.empty_month {
-  display: none;
-  height: 20px;
-}
+
 .block:hover {
 	border: 1px solid #9057f9;
 }
-.start {
-  border-radius: 2px;
-  margin-top: 15px;
-  margin-left: 3px;
-  width: 7px;
-  height: 5vw;
-  background-color: #8757f9;
-}
+
 .text_ {
   margin-top: 25px;
   margin-left: 0px;
   font-size: 10px;
+  
+  word-break: break-all;
+  white-space:normal;
 }
 .block {
+  cursor: pointer;
+  height: 120px;
+  width: 120px;
   font-weight: bolder;
   align-items: flex-start;
   justify-content: flex-start;
@@ -69,6 +34,9 @@
   flex-direction: column;
   background-color: #292929;
   border-radius: 20px;
+  
+  animation: glowing 1.5s ease-in-out infinite alternate;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.39); 
 }
 .Session_name {
   justify-content: space-between;
@@ -87,98 +55,37 @@
   justify-content: space-between;
   width: 90%;
 }
-.Status {
-  margin-left: 5px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-top: 8px;
-  margin-bottom: -25px;
-  color: rgba(0, 255, 0, 0.655);
-  gap: 3px;
-}
 
-.incomplete {
-  color: rgba(255, 17, 0, 0.655);
-}
-.progress {
-  background-color: transparent;
-  color: rgba(208, 255, 0, 0.655);
-}
-.card_row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-}
-.Month {
-  margin-left: 15px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-.Sessions_title {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  margin-left: 15px;
-  align-items: center;
-  margin-top: 20px;
-  font-size: 20px;
-}
-.Session_date {
-  font-size: 25px;
-}
-.solid {
-  background-color: rgba(255, 255, 255, 0.147);
-}
-.current_ {
-	border: 1px solid #8757f9;
+
+.My_journey_course_name{
+  color: rgb(102, 1, 197);
+  width: 70vw;
+  font-size: xx-large;
+  font-weight: bold;
+  margin-left: 30px;
 }
 .other {
   background-color: #8757f9;
 }
-.day_name {
-  font-size: large;
-  font-weight: 800;
-  color: rgba(240, 248, 255, 0.695);
-  align-items: center;
-  justify-content: center;
+.View_session_details{
+  color: aliceblue;
+  
+ border: 1px solid rgba(255, 255, 255, 0.137);
+  background-color: #222222;
+  width: 31vw;
   display: flex;
-  height: 40px;
-}
-.btn {
-  margin-top: 20px;
-  padding-left: 50px;
-  margin-bottom: 20px;
-}
-.btn-group {
-  margin-left: 20px;
-}
-
-.button {
-  font-weight: bold;
-}
-
-.dropdown-menu {
-  font-weight: bold;
+  flex-direction: column;
+  align-items: center;
+  height: 77vh;
+  justify-content: space-evenly;
+  border-radius: 10px;
+  animation: glowing 1.5s ease-in-out infinite alternate;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.39); 
 }
 @media screen and (max-width: 1000px) {
-  .Sessions_table {
-    margin-top: 40px;
-    margin-left: 0px;
-    border-radius: 20px;
-    height: 80vh;
-    margin-bottom: 20px;
-    width: 80vw;
-    background-color: #222222;
-  }
 
-  .Calender_row {
-    display: flex;
-    flex-direction: column;
-  }
   .text_ {
-    margin-top: -10px;
+    margin-top: -5px;
     margin-left: 0px;
   }
   .Session_name {
@@ -204,15 +111,203 @@
     grid-template-rows: 18.5vw 18.5vw 18.5vw 18.5vw 18.5vw 18.5vw 18.5vw 18.5vw 18.5vw 18.5vw 18.5vw;
   }
 }
-@media screen and (min-width: 1400px) {
-  .Session_name {
-    font-size: 1vw;
-    font-weight: 100;
-  }
+
+
+
+
+
+
+
+.calendar {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-@media screen and (min-width: 1000px) {
-  .start {
-    height: 5vw;
+.calendar h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.calendar-dates {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 10px;
+}
+.Calender_section{
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  align-items: center;
+}
+.Session_date_,.Session_name_,.Completed,.Session_time{
+  background-color: #11111162;
+  padding: 10px;
+  min-width: 17vw;
+  border-radius: 7px;
+  text-align: center;
+}
+
+.Session_date_:hover,.Session_name_:hover,.Completed:hover,.Session_time:hover{
+
+  background-color: rgba(103, 0, 199, 0.349);
+}
+
+.Record_player_{
+  border: 1px solid rgba(255, 255, 255, 0.253);
+  width: 29vw;
+  height: 20vw;
+  padding: 10px;
+}
+.calendar-date {
+  background-color: #292929;
+  border-radius: 10px;
+  width: 120px; /* Adjust width as desired */
+  height:130px; /* Adjust height as desired */
+  margin: 5px; /* Adjust margin as desired */
+  animation: glowing 1.5s ease-in-out infinite alternate;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.596); /* Adjust the color and intensity of the glow effect */
+}
+.Row_calendar_block{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+  margin-top: 15px;
+  margin-left: 15px;
+}
+.calendar-date:hover{
+ background-color: #202020;
+ border: 1px solid rgba(137, 43, 226, 0.658);
+}
+.today {
+ background-color: #222222; 
+ border: 1px solid rgba(209, 209, 209, 0.658);/* Set the background color for today's date */
+}
+.today:hover{
+ 
+ background-color: #222222; 
+}
+.Session_name_upload{
+ background-color: #222222;
+ width: 5vw;
+ font-size: 13px;
+ color: rgba(240, 248, 255, 0.863);
+}
+.put_session{
+ background-color: blueviolet;
+ margin: 3px;
+ font-size: 13px;
+}
+.Months{
+ display: flex;
+ flex-direction: row;
+ background-color: #161616bb;
+ width: fit-content;
+ padding: 10px;
+ border-radius: 10px;
+ margin: 0px;
+}
+.Month{
+ cursor: pointer;
+padding: 6px;
+border-radius: 10px;
+margin: 5px;
+}
+.Current_month{
+
+ background-color: rgb(103, 3, 197);
+ padding: 6px;
+ border-radius: 10px;
+ margin: 5px;
+}
+.Month:hover{
+ background-color: rgb(103, 3, 197);
   }
+.date__{
+  font-size: 20px;
+  font-weight: bold;
+  color: blueviolet;
+  margin-right: 20px;
+}
+
+.name {
+  color: #888;
+  font-size: 14px;
+}
+.Day{
+ color: #ff0000;
+}
+
+.weekdays {
+ display: grid;
+ grid-template-columns: repeat(7, 1fr);
+ gap: 10px;
+ margin-bottom: 10px;
+}
+
+.weekday {
+ font-weight: bold;
+}
+.Calender_component{
+ display: flex;
+ flex-direction: column;
+ background-color: #222222;
+ padding: 2vw;
+ margin: 20px;
+ border-radius: 20px;
+ border: 1px solid blueviolet;
+}
+.Calender_component{
+  width: 60vw;
+  max-height: 100vh;
+}
+.Undone{
+  color: #ff1919; 
+}
+.Done{
+  color: rgb(0, 255, 0);
+}
+
+@media screen and (max-width: 1000px) {
+  .calendar-dates {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+  }
+  .block{
+    width: 16vw;
+    height: 20vw;
+  }
+  .View_session_details{
+    margin-left: 10px;
+    width: 77vw;
+    height: 65vh;
+  }
+  .Calender_component{
+    width: 75vw;
+    max-height: 100vh;
+  }
+  .Calender_section{
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 10px;
+    width: 75vw;
+    align-items: center;
+  }
+
+  .Video_player{
+    width: 75vw;
+  }
+  .Record_player_{
+    width: 75vw;
+    height: 50vw;
+  }
+  
+.Session_date_,.Session_name_,.Completed,.Session_time{
+  min-width: 70vw;
+}
+  
 }

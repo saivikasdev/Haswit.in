@@ -1,0 +1,47 @@
+.About_course{
+   width: 60vw;
+   height: 50vh;
+   background-color: #222222;
+   border-radius: 20px;
+   padding: 20px;
+}
+.About_course_head{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
+   font-size: 3vw;
+   font-weight: bolder;
+   color: rgb(123, 0, 255) ;
+}
+.About_course_desc{
+   color: rgba(240, 248, 255, 0.884);
+   font-size: 1.1vw;
+   font-weight: 600;
+   margin: 10px;
+}
+.react_logo{
+   display: flex;
+   flex-direction: row;
+   align-items: flex-end;
+   justify-content: flex-end;
+   align-self:center;
+   
+}
+
+@media screen and (max-width: 800px) 
+{
+   .About_course{
+      width: 75vw;
+      height: 130vw;
+   }
+   
+.About_course_head{
+   
+   font-size: 7vw;
+}
+.About_course_desc{
+   
+   font-size: 3vw;
+}
+}

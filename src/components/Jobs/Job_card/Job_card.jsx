@@ -11,7 +11,7 @@ const Job_card = (props) => {
         {Job.job_desc}
         </div>
         <div className="min_rank">
-       Minimum rank : {Job.minimum_rank}
+       Rank required: {Job.minimum_rank}
         </div>
         <div className="company">
        Company : {Job.company}
@@ -28,7 +28,7 @@ const Job_card = (props) => {
         <div className="company">
           Location : {Job.location}
         </div>
-        <div className="Eligible_title">
+        {/* <div className="Eligible_title">
           Candidates Eligible :
 
         </div>
@@ -76,8 +76,8 @@ const Job_card = (props) => {
               #7
             </div>
           </div>
-        </div>
-        <div className="More_desc">
+        </div> */}
+        <div className="More_desc" onClick={()=>{window.open(Job.website_link)}}> 
           Visit Now
         </div>
     </div>

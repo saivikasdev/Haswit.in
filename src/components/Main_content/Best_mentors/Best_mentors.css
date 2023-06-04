@@ -1,0 +1,92 @@
+.Best_mentors
+{
+   width: 88vw;
+   height: 60vh;
+   background-color: #222222;
+   margin: auto;
+   margin-top: 20px;
+   border-radius: 20px;
+   display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-evenly;
+}
+
+
+
+.Best_mentors_heading{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+}
+.Our{
+   font-size: 5vw;
+   font-weight: bolder;
+   color: rgb(123, 0, 255) ;
+
+}
+
+.Best_m{
+   font-size: 1.5vw;
+   font-weight: 300;
+
+}
+
+
+.Mentor_pic{
+   margin: 25px;
+   border-radius: 180px;
+   width: 18vw;
+   height: 20vw;
+}
+.Mentor_pics{
+   display: flex;
+   flex-direction: row;
+   height: 45vh;
+
+}
+.Mentor_{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content:space-between;
+}
+
+.Mentor_name_{
+   font-size: large;
+   font-weight: 600;
+}
+
+.Work_{
+   font-size: small;
+   font-weight: 200;
+}
+@media screen and (max-width: 800px) {
+   .Best_mentors
+{
+   margin-left:0px ;
+   width: 75vw;
+   flex-direction: column;
+   justify-content: flex-start;
+   height: 250vw;
+
+}
+.Our{
+   font-size: 15vw;
+}
+.Mentor_pics{
+   
+   flex-direction: column;
+}
+.Best_m{
+
+   font-size: 3vw;
+}
+
+.Mentor_pic{
+   width: 44vw;
+   height: 50vw;
+}
+}

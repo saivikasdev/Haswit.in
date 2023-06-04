@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Cookies from "universal-cookie";
 import AceEditor from "react-ace";
-
+import './Code_editor.css'
 // Import Ace editor modes and themes
 import "ace-builds/src-noconflict/mode-html";
 import "ace-builds/src-noconflict/mode-css";
@@ -10,8 +10,12 @@ import "ace-builds/src-noconflict/theme-monokai";
 import './Code_editor.css'
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "../../../firebase-config";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Loader from "../../Loader";
 const LiveCodeEditor = () => {
    const cookies = new Cookies();
+   const [loading, setloading] = useState();
    const [code_title, setcode_title] = useState('')
   const [html, setHtml] = useState("<!DOCTYPE html><html><body><h1>My First Heading</h1><p>My first paragraph.</p></body></html>");
   const [css, setCss] = useState("body {background-color: powderblue;}h1   {color: blue;}p    {color: red;}");
@@ -29,6 +33,7 @@ const LiveCodeEditor = () => {
     `;
     iframe.srcdoc = iframeContent;
   };
+  let width = window.screen.width;
   const date = new Date();
   const showTime =
     date.getDate() +
@@ -42,6 +47,7 @@ const LiveCodeEditor = () => {
     date.getSeconds();
 
   const savecode = async (e) => {
+    setloading(true)
    e.preventDefault();
    if (code_title.length > 5) {
      await setDoc(
@@ -62,23 +68,29 @@ const LiveCodeEditor = () => {
        },
        { merge: true }
      ).then(() => {
-       document.getElementById("add_note_form");
+      toast('Code saved successfully', {
+        position: toast.POSITION.BOTTOM_LEFT,
+        className: 'toast-message'
+    })
      });
    } else {
+
    }
+   
+   setloading(false)
  };
 
 
 
   return (
     <div>
-      <div>
+      <div className="Code_field">
          HTML
         <AceEditor
         
-        width="40vw"
+        width={(window.innerWidth<1000)?"80vw":"40vw"}
         height="20vh"
-        className="editor"
+        className="edit_code"
           mode="html"
           theme="monokai"
           defaultValue ='<!DOCTYPE html>
@@ -95,12 +107,12 @@ const LiveCodeEditor = () => {
           editorProps={{ $blockScrolling: true }}
         />
       </div>
-      <div>
+      <div className="Code_field">
          CSS
         <AceEditor
-        width="40vw"
+        width={(window.innerWidth<1000)?"80vw":"40vw"}
         height="20vh"
-        className="editor"
+        className="edit_code"
           mode="css"
           theme="monokai"
           defaultValue="body {background-color: powderblue;}
@@ -114,12 +126,12 @@ const LiveCodeEditor = () => {
           editorProps={{ $blockScrolling: true }}
         />
       </div>
-      <div>
+      <div className="Code_field">
          Javascript
         <AceEditor
-        width="40vw"
+        width={(window.innerWidth<1000)?"80vw":"40vw"}
         height="20vh"
-        className="editor"
+        className="edit_code"
           mode="javascript"
           theme="monokai"
           onChange={(value) => setJs(value)}
@@ -136,6 +148,9 @@ const LiveCodeEditor = () => {
                 type="text"
                 className="code_title"
                 placeholder="Code title"
+              maxlength="10"
+              minLength="5"
+              required
                 onChange={(e) => {
                   setcode_title(e.target.value);
                 }}
@@ -150,6 +165,11 @@ const LiveCodeEditor = () => {
         className="output"
         ></iframe>
       </div>
+      
+      <ToastContainer />
+      {
+      (loading)?
+      <Loader/>:null}
     </div>
   );
 };

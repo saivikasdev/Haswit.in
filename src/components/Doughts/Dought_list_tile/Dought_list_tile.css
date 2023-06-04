@@ -1,7 +1,8 @@
 .Dought_list_tile{
     cursor: pointer;
     width: 90vw;
-    height: 100px;
+    max-height: 200px;
+    min-height: 100px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -9,6 +10,7 @@
     margin: 10px;
     border-radius: 5px;
     border: 1px solid rgba(255, 255, 255, 0.19);
+    color: azure;
 }
 .arrow_dought{
     font-size: 25px;
@@ -31,6 +33,9 @@
 .Dought_que{
     font-size: 18px;
     font-weight: 400;
+    width: 30vw;
+    white-space: normal;
+    word-break: break-all;
 }
 .Doughter_name{
     font-weight: 700;
@@ -40,9 +45,14 @@
 
 @media screen and (max-width: 800px) {
     .Dought_list_tile{
+        display: flex;
+        flex-direction: column;
+        height: max-content;
     width: 80vw;
         margin: 0px;
         margin-bottom: 10px;
+        align-items: center;
+        padding: 10px;
     }
     .Doughter_name{
         padding: 5px;

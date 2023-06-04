@@ -1,0 +1,41 @@
+.Talk_to_us{
+   width: 25vw;
+   height: 50vh;
+   background-color: #222222;
+   border-radius: 20px;
+   display: flex;
+   flex-direction: column;
+   padding: 20px;
+}
+.Talk_to_us_head{
+   font-size: 4vw;
+   font-weight: bolder;
+   color: rgb(123, 0, 255) ;
+}
+.Talk_to_us_desc{
+   font-size: 1.1vw;
+   font-weight: 500;
+   margin: 10px;
+   color: rgba(240, 248, 255, 0.938);
+}
+
+@media screen and (max-width: 800px) {
+   .Talk_to_us{
+      width: 75vw;
+      margin-left:0px ;
+      height: fit-content;
+      margin-top: 10px;
+      margin-bottom: 10px;
+   }
+   .Talk_to_us_head{
+      font-size: 10vw;
+      font-weight: bolder;
+      color: rgb(123, 0, 255) ;
+   }
+   .Talk_to_us_desc{
+      font-size: 3.1vw;
+      font-weight: 500;
+      margin: 10px;
+      color: rgba(240, 248, 255, 0.938);
+   }
+}

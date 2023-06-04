@@ -23,6 +23,9 @@ input{
    width: 300px;
    font-size: 16px;
 }
+.Whatsapp{
+   font-size: 12px;
+}
 .Details_head{
    color: aliceblue;
    font-weight: 500;
@@ -38,14 +41,13 @@ input{
 }
 
 
-
 .Details_block{
    display: flex;
    flex-direction: column;
    justify-content: space-evenly;
    background-color: #292929;
    width: 400px;
-   height: 700px;
+   height: 800px;
    border-radius: 20px;
    align-items: center;
 }

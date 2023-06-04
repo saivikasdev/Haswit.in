@@ -23,15 +23,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(255, 255, 255, 0.757);
+    border: 1px solid rgba(255, 255, 255, 0.507);
     border-radius: 5px;
-    background-color: #4600ae;
+    background-color: rgb(102, 1, 197);
 }
 
-
+.Help{
+  min-height: 190vh;
+}
 
 .right_img{
-
 }
 .Help_content{
   display: flex;
@@ -80,7 +81,7 @@ color: rgba(255, 255, 255, 0.589);
 }
 
 .Dought_button{
-  background-color: #4600ae;
+  background-color: #4600ae00;
   padding: 20px;
   border: 1px solid rgba(255, 255, 255, 0.576);
   border-radius: 20px;
@@ -89,7 +90,7 @@ color: rgba(255, 255, 255, 0.589);
 
 .Dought_button:hover{
   cursor: pointer;
-  background-color: #2d0071;
+  background-color: rgb(123, 0, 255);
   padding: 20px;
   border: 1px solid rgba(255, 255, 255, 0.576);
   border-radius: 20px;
@@ -122,6 +123,7 @@ margin:0px ;
   flex-direction: column;
   justify-content: space-evenly;
   border-radius:30px ;
+  margin-left:30px;
 }
 .Help_body {
   width: 77%;

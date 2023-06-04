@@ -1,0 +1,52 @@
+.Certify{
+   width: 88vw;
+   height: 50vh;
+   background-color: #222222;
+   margin: auto;
+   margin-top: 20px;
+   border-radius: 20px;
+   display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-evenly;
+}
+.certificate_image{
+   height: 20vw;
+   border-radius: 20px;
+   border: 2px solid rgba(0, 0, 0, 0.548);
+}
+.Certificate_desc{
+   width: 30vw;
+   color: rgba(240, 248, 255, 0.911);
+   font-weight: 200;
+   font-size: 23px;
+}
+.Certificate_title{
+   
+   font-size: 2vw;
+   font-weight: bolder;
+   color: rgb(123, 0, 255) ;
+
+}
+
+@media screen and (max-width: 800px) {
+   .Certify{
+      flex-direction: column;
+width: 75vw;
+margin-left: 10px;
+      height: 130vw;
+   }
+   
+.Certificate_desc{
+   width: 70vw;
+   font-size: 19px;
+}
+.certificate_image{
+
+   height: 50vw;
+}
+
+.Certificate_title{
+   font-size: large;
+}
+}

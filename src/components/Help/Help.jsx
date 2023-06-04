@@ -7,6 +7,7 @@ import { collection, query,onSnapshot } from "firebase/firestore";
 import { useEffect } from 'react';
 import { db } from '../../firebase-config';
 
+import copy from "copy-to-clipboard";  
 const Help = () => {
   const [loading, setLoading] = useState(false)
   const [mentors, setmentors] = React.useState([]);
@@ -50,7 +51,11 @@ const Help = () => {
         <div className="Mentor_phone">
         {mentor.Mentorphone}
         </div>
-        <div className="Dought_button">
+        <div className="Dought_button" onClick={()=>{
+          
+    copy(mentor.Mentorphone);
+          alert('Copied '+mentor.Mentorname+' Phone number')
+        }}>
           Ask a Dought
         </div>
       </div>

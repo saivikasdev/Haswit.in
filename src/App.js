@@ -22,12 +22,15 @@ import Complete_details from "./components/Complete_details/Complete_details";
 import { useState } from "react";
 import { useEffect } from "react";
 import { onAuthStateChanged, updatePhoneNumber, getAuth } from "firebase/auth";
-import { authentication } from "./firebase-config";
+import { authentication, db } from "./firebase-config";
 import Private_routes from "./components/Private_routes";
 import Cookies from 'universal-cookie';
 import Note_detail from "./components/My_notes/Note_detail/Note_detail";
 import LiveCodeEditor from "./components/Live_compiler/Live_compiler";
 import Code_detail from "./components/My_codes/Code_detail/Code_detail";
+import Quiz from "./components/Test_page/Test_page";
+import Test_route from "./components/Test_route";
+import { doc, getDoc } from "firebase/firestore";
 function App() {
   const [project, setproject] = useState("");
   const [sidebar, setsidebar] = useState(true);
@@ -42,6 +45,53 @@ function App() {
   //     setsenduser(true);
   //   });
   // }, []);
+
+
+  useEffect(() => {
+  
+
+
+
+    const fetch_current = async () =>{
+       const docRef = doc(db,cookies.get('session_month'), cookies.get('session_date'));
+   const docSnap = await getDoc(docRef);
+   if (docSnap.exists()) {
+     cookies.set('File', docSnap.data().file, { path: '/' })
+ 
+     cookies.set('Test', docSnap.data().test, { path: '/' })
+     console.log(docSnap.data().file);
+   } else {
+     // doc.data() will be undefined in this case
+     cookies.set('File', false, { path: '/' })
+ 
+     cookies.set('Test', 'false', { path: '/' })
+    }
+   }
+   fetch_current();
+   const fetchData = async () => {
+    const docRef = doc(db, cookies.get("session_month").toString(), cookies.get("session_date").toString());
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      cookies.set('Status', docSnap.data().Students.includes(cookies.get("user").phoneNumber), { path: '/' })
+
+      console.log(docSnap.data().session_file);
+    } else {
+      
+      cookies.set('Status',false, { path: '/' })
+      // doc.data() will be undefined in this case
+      console.log("No such document!");
+    }
+
+
+
+  }
+fetchData();
+
+
+ }, [])
+ 
+
+
 
   return (
     <div className="App">
@@ -256,7 +306,18 @@ function App() {
               path="Test"
               element={
                 <Private_routes>
-                  <Test_page />
+                  <Test_route>
+                  {(() => {
+ if (cookies.get("session_date")&&cookies.get("session_month")&&cookies.get("Test")===true) {
+  return (
+    <Quiz/>
+  )
+} else {
+  return null
+}
+})()}
+                  
+                  </Test_route>
                 </Private_routes>
               }
             />

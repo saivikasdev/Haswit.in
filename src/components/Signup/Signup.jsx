@@ -12,15 +12,21 @@ import { useNavigate } from "react-router-dom";
 import { async } from "@firebase/util";
 import { getAuth, updateProfile } from "firebase/auth";
 import Cookies from 'universal-cookie';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import copy from "copy-to-clipboard";  
+import Loader from "../Loader";
 const Signup = () => {
   const cookies = new Cookies();
   const [otp_block, setotp_block] = useState(false);
   const [Phone, setPhone] = useState("+91");
   const [OTP, setOTP] = useState("");
-  const [Loader, setLoader] = useState(false)
 
+  const [loading, setLoading] = useState(false);
   window.name = Phone;
   const Recaptcha = (e) => {
+    
+    setLoading(true);
     window.recaptchaVerifier = new RecaptchaVerifier(
       "Recaptcha",
       {
@@ -29,6 +35,8 @@ const Signup = () => {
       },
       authentication
     );
+    
+    setLoading(false);
   };
 
   
@@ -49,6 +57,7 @@ else{
   }
 
   const verifyotp = async (e) => {
+    setLoading(true)
 
     e.preventDefault();
     let Otp = e.target.value;
@@ -57,18 +66,25 @@ else{
     const docRef = doc(db, "Students",Phone );
     const docSnap = await getDoc(docRef);
     if (e.target.value.length === 6) {
+      
       let conformationresult = window.conformationResult;
       conformationresult
         .confirm(e.target.value)
         .then(async (result) => {
-          
+          toast('OTP verified successfully', {
+            position: toast.POSITION.BOTTOM_LEFT,
+            className: 'toast-message'
+        });
           cookies.set('user', result.user, { path: '/' });
           if(docSnap.exists()){
+            
             console.log(doc)
             console.log(authentication.currentUser.phoneNumber)
             navigate("/");
+            
           }
           else{
+            
             console.log(result)
             console.log(result.user)
             authentication.currentUser.phoneNumber=result.user.phoneNumber
@@ -84,6 +100,7 @@ else{
 
 
             navigate("/Complete_details");
+            
           }
 
           
@@ -96,27 +113,39 @@ else{
         .catch((error) => {
           console.log(error);
         });
+        
     }
+    setLoading(false)
   };
 
   const requestOTP = (e) => {
+    setLoading(true)
     e.preventDefault();
     if (Phone.length >= 12) {
       
-    setLoader(true)
       Recaptcha();
       let appverifier = window.recaptchaVerifier;
       signInWithPhoneNumber(authentication, Phone, appverifier)
         .then((conformationResult) => {
           window.conformationResult = conformationResult;
-          
+
+          toast('OTP sent', {
+            position: toast.POSITION.BOTTOM_LEFT,
+            className: 'toast-message'
+        });
     setotp_block(true);
         })
         .catch((error) => {
           console.log(error);
+          toast('Something went wrong please try again!', {
+            position: toast.POSITION.BOTTOM_LEFT,
+            className: 'toast-message'
+        });
         });
         
     }
+    
+    setLoading(false);
   };
 
   const set_phone = (e) => {
@@ -129,12 +158,15 @@ else{
       <div className="">
         <form onSubmit={requestOTP} className='Phone_otp_block'>
           
-        <div className="Phone_text">Enter Phone Number</div>
+        <div className="Phone_text">Enter Phone Number <br/>with country code</div>
           <input
             type="tel"
             className="Phone_input"
             placeholder="Enter Your Phone number"
             onChange={set_phone}
+            maxlength="13"
+            minLength="11"
+            required
           />
           <button type="submit" className="send_otp">
             Send OTP
@@ -145,8 +177,12 @@ else{
               <input
                 type="telephone"
                 className="OTP_input"
-                placeholder="OTP"
+                placeholder="6 digit OTP"
                 onChange={verifyotp}
+                maxlength="6"
+                minLength="6"
+                required
+
               />
             </div>
           </>
@@ -160,8 +196,14 @@ else{
       </div>
           </>
         ) : null}
+        <ToastContainer />
       <div id="Recaptcha"></div>
+      {
+      (loading)?
+      <Loader/>:null}
     </div>
+    
+    
   );
 };
 

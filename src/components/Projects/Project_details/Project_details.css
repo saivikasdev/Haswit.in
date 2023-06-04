@@ -7,7 +7,9 @@
   display: flex;
   flex-direction: row;
 }
-.spinner{
+.project_image{
+  padding: 20px;
+  border: 5px solid rgb(146, 146, 146);
   height: 50vh;
   margin: 20px;
   border-radius: 20px;
@@ -20,16 +22,44 @@
   text-transform: uppercase;
   margin-bottom: 20px;
 }
+.Project_desc{
+  word-wrap: break-word;
+  width: 50vw;
+}
 .Project_desc_title{
   font-weight: w300;
   color: white;
 }
+.Bids_head{
+  border-radius: 20px;
+  padding: 20px;
+  background-color: blueviolet;
+  border: 1px solid blueviolet;
+}
+.Bid_card{
+  border-radius: 10px;
+width: 15vw;
+  padding: 20px;
+  background-color: #292929;
+  border: 1px solid blueviolet;
+}
+.Bids{
+  border-radius: 10px;
+  width: fit-content;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom:5px ;
+}
 .Project_details_body {
-  border-radius: 90px;
-  background-color: #222222;
+  border: 1px solid blueviolet;
+  border-radius: 30px;
+  background-color: #1d1d1d;
   
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin: 10px;
+  animation: glowing 1.5s ease-in-out infinite alternate;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.733); 
+  margin-left: 3vw;
   padding: 70px;
   display: flex;
   flex-direction: column;
@@ -68,7 +98,7 @@
   align-self: flex-start;
   font-size: 20px;
   font-weight: bolder;
-  color: rgb(167, 0, 0);
+  color: rgb(167, 167, 167);
 }
 
 .point_get{
@@ -77,25 +107,30 @@
   align-self: flex-start;
   font-size: 20px;
   font-weight: bolder;
-  color: rgb(97, 0, 167);
+  color: rgb(172, 172, 172);
 }
 .process_project{
   padding: 10px;
   font-size: 20px;
 }
-
+.Column{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 @media screen and (max-width: 1200px) {
   
 .Project_details_body {
   padding: 20px;
-  width: 78vw;
+  width:90vw;
   font-size: 12px;
   border-radius: 10px;
 }
 .Requirements_description {
-  padding: 10px;
-  font-size: 14px;
+  width: 90vw;
+  padding: 6px;
+  font-size: 10px;
   font-weight: 500;
   color: rgba(240, 248, 255, 0.745);
 }
@@ -107,9 +142,26 @@
   display: flex;
   flex-direction: column-reverse;
 }
-.spinner{
-  width: 70vw;
+.project_image{
+  width: 80vw;
   height: 70vw;
   margin-bottom: 30px;
+  margin-left: 10vw;
 }
+
+.Bid_card{
+  border-radius: 10px;
+width: fit-content;
+  padding: 20px;
+  background-color: #292929;
+  border: 1px solid blueviolet;
+}
+.Project_desc{
+  word-wrap: break-word;
+  width: 85vw;
+  margin: 5px;
+}
+}
+.Project_submit{
+  background-color: #29292900;
 }

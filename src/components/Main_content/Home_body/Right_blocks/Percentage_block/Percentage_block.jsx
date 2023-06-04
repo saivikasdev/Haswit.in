@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Percentage_block.css'
 const Percentage_block = () => {
+  
+  const currentDate = new Date();
+  const currentDay_ = currentDate.getDate();
+const [month, setmonth] = useState(currentDate.getMonth());
   return (
     <div className="Percentage_block">
         <div className="column_percentage">
@@ -12,7 +16,8 @@ const Percentage_block = () => {
         </div>
         </div>
         <div className="Percentage">
-        36%
+        {Math.round(((currentDay_*(month-4))/80)*100)}%
+        
         </div>
     </div>
   )

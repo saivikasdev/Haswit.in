@@ -33,12 +33,7 @@ const [about_us, setabout_us] = useState('')
   
   return (
     <div className="About_me">
-        <div className="About_me_title">
-            <h2>ABOUT ME</h2>
-        </div>
-        <div className="About_me_body">
-               {about_us}
-               </div>
+       {about_us}
                
     </div>
   )
