@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Haswit.in/static/css/main.a0c35241.css",
+    "main.js": "/Haswit.in/static/js/main.1796ad6b.js",
+    "static/media/live_banner.png": "/Haswit.in/static/media/live_banner.596f617868f133ecb866.png",
+    "static/media/Background.png": "/Haswit.in/static/media/Background.9a5703c114bec6efe39b.png",
+    "static/media/mentor2.jpg": "/Haswit.in/static/media/mentor2.084f110087cf0d831501.jpg",
+    "static/media/jobs.webp": "/Haswit.in/static/media/jobs.d3df4b23dcbbf71e0c8e.webp",
+    "static/media/mentor1.jpg": "/Haswit.in/static/media/mentor1.cc31bfd3837725ef2dc7.jpg",
+    "static/media/HASWIT.png": "/Haswit.in/static/media/HASWIT.3bcd0c0b4cdda04250c1.png",
+    "static/media/fidget.png": "/Haswit.in/static/media/fidget.d2928a5601f24f2754f1.png",
+    "static/media/illustration.png": "/Haswit.in/static/media/illustration.2aa21a20769ae53a2f4c.png",
+    "static/media/bitmoji.png": "/Haswit.in/static/media/bitmoji.2d3f719f2366dba49a4a.png",
+    "static/media/certificate.jpg": "/Haswit.in/static/media/certificate.7363119b071417559a6c.jpg",
+    "static/media/xelpmoc.png": "/Haswit.in/static/media/xelpmoc.9dd445db3f02e4fcdc1d.png",
+    "static/media/mentor3.webp": "/Haswit.in/static/media/mentor3.0ea5c0e8f584d2e920ca.webp",
+    "index.html": "/Haswit.in/index.html",
+    "main.a0c35241.css.map": "/Haswit.in/static/css/main.a0c35241.css.map",
+    "main.1796ad6b.js.map": "/Haswit.in/static/js/main.1796ad6b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a0c35241.css",
+    "static/js/main.1796ad6b.js"
+  ]
+}
