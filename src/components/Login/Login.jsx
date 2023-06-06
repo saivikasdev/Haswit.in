@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import "./Signup.css";
+import "../Signup/Signup.css";
 import { authentication } from "../../firebase-config";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { doc, setDoc, Timestamp ,getDoc} from "firebase/firestore";
@@ -16,7 +16,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import copy from "copy-to-clipboard";  
 import Loader from "../Loader";
-const Signup = () => {
+const Login = () => {
   const cookies = new Cookies();
   const [otp_block, setotp_block] = useState(false);
   const [Phone, setPhone] = useState("+91");
@@ -75,37 +75,37 @@ else{
             position: toast.POSITION.BOTTOM_LEFT,
             className: 'toast-message'
         });
-          // cookies.set('user', result.user, { path: '/' });
           if(docSnap.exists()){
             
-            toast('Already had an account login..', {
-              position: toast.POSITION.BOTTOM_LEFT,
-              className: 'toast-message'
-          });
-
-            // console.log(doc)
-            // console.log(authentication.currentUser.phoneNumber)
-            // navigate("/");
+          cookies.set('user', result.user, { path: '/' });
+            console.log(doc)
+            console.log(authentication.currentUser.phoneNumber)
+            navigate("/");
             
           }
           else{
-            
-            console.log(result)
-            console.log(result.user)
-            authentication.currentUser.phoneNumber=result.user.phoneNumber
+            toast('No details found please Signup first', {
+               position: toast.POSITION.BOTTOM_LEFT,
+               className: 'toast-message'
+           }).then(()=>{
 
-            // await setDoc(doc(db, "All_users", Phone), {
+            navigate('/TID');
+           })
+            // console.log(result)
+            // console.log(result.user)
+            // authentication.currentUser.phoneNumber=result.user.phoneNumber
+            // await setDoc(doc(db, "Students", Phone), {
             //   Phone: Phone,
-            //   payment:false,
-            // }).then(()=>{
-              cookies.set('user', result.user, { path: '/' })
+            //   Points : 0,
+            //   UID : result.user.uid
+            // }).then({
               
-            navigate("/payment");
 
             // });
 
 
 
+            // navigate("/Complete_details");
             
           }
 
@@ -118,10 +118,6 @@ else{
         })
         .catch((error) => {
           console.log(error);
-          toast(error.toString(), {
-            position: toast.POSITION.BOTTOM_LEFT,
-            className: 'toast-message'
-        });
         });
         
     }
@@ -146,8 +142,8 @@ else{
     setotp_block(true);
         })
         .catch((error) => {
-          console.log(error);
-          toast(error.toString()+"try again later after refresh", {
+          console.log(error.toString());
+          toast(error.toString(), {
             position: toast.POSITION.BOTTOM_LEFT,
             className: 'toast-message'
         });
@@ -168,7 +164,7 @@ else{
       <div className="">
         <form onSubmit={requestOTP} className='Phone_otp_block'>
           
-        Signup
+         Login
         <div className="Phone_text">Enter Phone Number with country code</div>
           <input
             type="tel"
@@ -187,7 +183,7 @@ else{
             <div className="OTP_fieldd">
               <input
                 type="telephone"
-                className="OTP_input_"
+                className="OTP_input"
                 placeholder="6 digit OTP"
                 onChange={verifyotp}
                 maxlength="6"
@@ -201,6 +197,12 @@ else{
         </form>
        
       </div>
+      {Loader === true ? (
+          <>
+            <div className="Loader">
+      </div>
+          </>
+        ) : null}
         <ToastContainer />
       <div id="Recaptcha"></div>
       {
@@ -212,4 +214,4 @@ else{
   );
 };
 
-export default Signup;
+export default Login;

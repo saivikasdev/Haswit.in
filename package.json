@@ -1,7 +1,7 @@
 {
   "name": "haswit",
   "version": "0.1.0",
-  "homepage": "https://saivikasdev.github.io/",
+  "homepage": "https://saivikasdev.github.io/Haswit.in",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -38,11 +38,11 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

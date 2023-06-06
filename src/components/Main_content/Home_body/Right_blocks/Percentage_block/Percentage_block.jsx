@@ -9,7 +9,7 @@ const [month, setmonth] = useState(currentDate.getMonth());
     <div className="Percentage_block">
         <div className="column_percentage">
         <div className="Percentage_completed">
-        Training completed
+        Already completed completed course days
         </div>
         <div className="Out_of">
           Out of 100%

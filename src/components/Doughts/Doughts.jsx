@@ -39,7 +39,7 @@ const showTime = date.getDate()+'/'+(date.getMonth()+1)+' '+date.getHours()
     e.preventDefault();
     if (dought.length > 15) {
       await setDoc(
-        doc(db, "Doughts", dought),
+        doc(db, "Doughts", dought.toString()),
         {
           Dought: dought,
           Username: user_name,
@@ -168,7 +168,7 @@ const showTime = date.getDate()+'/'+(date.getMonth()+1)+' '+date.getHours()
             onChange={dought_set}
             type="text"
             className="project_details"
-            placeholder="Your dought"
+            placeholder="Your dought (Should not contain '/')"
             rows="10"
             cols="130"
             minLength="15"

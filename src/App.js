@@ -31,6 +31,12 @@ import Code_detail from "./components/My_codes/Code_detail/Code_detail";
 import Quiz from "./components/Test_page/Test_page";
 import Test_route from "./components/Test_route";
 import { doc, getDoc } from "firebase/firestore";
+import Payment from "./Payment";
+import PrivateRoute from "./PrivateRoute";
+import Tech_ID from "./Tech_ID";
+import Login from "./components/Login/Login";
+import Complete_details_route from "./components/Com_det_route";
+import Payment_route from "./Payment_route";
 function App() {
   const [project, setproject] = useState("");
   const [sidebar, setsidebar] = useState(true);
@@ -48,7 +54,6 @@ function App() {
 
 
   useEffect(() => {
-  
 
 
 
@@ -98,8 +103,28 @@ fetchData();
       <BrowserRouter>
         <Routes>
           <Route path="/">
+
+
+          <Route index element={<Tech_ID />} />
+
+          {/* <PrivateRoute
+          path="/Payment"
+          component={Payment}
+          condition={firebaseFieldValue}
+          redirectPath={'/Payment'}
+        /> */}
+
+
+          <Route
+            path="Payment"
+            element ={
+              <Payment_route>
+              <Payment/>
+              </Payment_route>
+            }/>
+            
             <Route
-              index
+            path="home"
               element={
                 <>
                   {
@@ -126,6 +151,33 @@ fetchData();
                 </>
               }
             />
+            
+            <Route
+            path="Privacy-policy"
+            element ={
+              <Private_routes>
+              window.location.href="https://merchant.razorpay.com/policy/LxzvH16ruCuujc/privacy"
+
+              </Private_routes>
+            }/>
+            <Route
+            path="Terms-conditions"
+            element ={
+              
+              <Private_routes>
+              window.location.href="https://merchant.razorpay.com/policy/LxzvH16ruCuujc/terms"
+
+              </Private_routes>
+            }/>
+            <Route
+            path="Cancellation-refund"
+            element ={
+              
+              <Private_routes>
+              window.location.href="https://merchant.razorpay.com/policy/LxzvH16ruCuujc/refund"
+
+              </Private_routes>
+            }/>
             <Route
               path="Ranking"
               element={
@@ -140,6 +192,7 @@ fetchData();
                 </>
               }
             />
+            
             <Route
               path="Projects"
               element={
@@ -236,6 +289,7 @@ fetchData();
                 </>
               }
             />
+           
             <Route
               path="Skill_Stars"
               element={
@@ -302,6 +356,8 @@ fetchData();
                 </Private_routes>
               }
             />
+            
+            
             <Route
               path="Test"
               element={
@@ -330,7 +386,11 @@ fetchData();
               }
             />
             <Route path="Signup" element={<Signup />} />
-            <Route path="Complete_details" element={<Complete_details />} />
+            <Route path="Login" element={<Login />} />
+            <Route path="Complete_details" element={
+            <Complete_details_route>
+              <Complete_details />
+              </Complete_details_route>} />
           </Route>
         </Routes>
       </BrowserRouter>

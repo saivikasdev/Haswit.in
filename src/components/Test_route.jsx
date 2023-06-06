@@ -67,7 +67,7 @@ const Test_route = ({children}) => {
    }
    else{
     console.log(session_date,session_month,file,test)
-    return <Navigate to={"/"}/>
+    return <Navigate to={"/home"}/>
    }
    
 }

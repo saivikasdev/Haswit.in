@@ -4,7 +4,7 @@ export const Side_menu_data = [
 {
     icon :UilEstate,
     name : 'Home',
-    link : "/"
+    link : "/home"
 },
 
 {

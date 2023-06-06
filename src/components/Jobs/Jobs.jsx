@@ -31,7 +31,7 @@ const [loading, setLoading] = useState(false);
 
 
   return (
-    <div className="Jobs">
+    <div className="Jobs_">
         <div className="jobs_title">
           Jobs_interships
         </div>

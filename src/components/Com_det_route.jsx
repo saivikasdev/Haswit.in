@@ -5,9 +5,9 @@ import { authentication, db } from '../firebase-config';
 import Cookies from 'universal-cookie';
 import { doc, getDoc } from 'firebase/firestore';
 
-const Private_routes = ({ children }) => {
+const Complete_details_route = ({ children }) => {
   const cookies = new Cookies();
-  const docRef = doc(db, 'Students', cookies.get('user').phoneNumber);
+  const docRef = doc(db, 'All_users', cookies.get('user').phoneNumber);
   const navigate = useNavigate(); // Add this line
 
   useEffect(() => {
@@ -27,4 +27,4 @@ const Private_routes = ({ children }) => {
   return children;
 };
 
-export default Private_routes;
+export default Complete_details_route;

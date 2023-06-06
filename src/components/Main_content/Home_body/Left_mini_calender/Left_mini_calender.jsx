@@ -133,7 +133,7 @@ const [Current_name, setCurrent_name] = useState();
     const currentDate = new Date();
     const currentDay = currentDate.getDate();
     return dates.map((name, index) => {
-      const className = (index === currentDay&& month===currentDate.getMonth()) ? "day_date current" : "day_date";
+      const className = (index === currentDay+3&& month === currentDate.getMonth()) ? "day_date current" : "day_date";
       return name === null ? (
        null
       ) : (
@@ -422,7 +422,7 @@ const [Current_name, setCurrent_name] = useState();
           
         }
         >
-          <Link to={(Session_name&&Session_file) ? "/record_detail" : "/"}>
+          <Link to={(Session_name&&Session_file) ? "/record_detail" : "/home"}>
             <div className="session">
               <div className="name">{Session_name ? Session_name : "Select any Date"}</div>
               <div className="date_">{Session_date ? Session_date : "🤔"}/0{month}</div>
@@ -445,7 +445,7 @@ const [Current_name, setCurrent_name] = useState();
 
 
         >
-          <Link to={(Current_name&&Current_file&&Current_file_doc) ? "/record_detail" : "/"}>
+          <Link to={(Current_name&&Current_file&&Current_file_doc) ? "/record_detail" : "/home"}>
             <div className="session">
               <div className="name">{(Current_name)?Current_name : '...'}</div>
               <div className="date_">{currentDate.getDate()}/0{currentDate.getMonth()}</div>

@@ -1,0 +1,208 @@
+.TID_join {
+  width: 60vw;
+  height: 35vw;
+  border-radius: 40px;
+  background-image: linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%);
+  margin-top: 8vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.Haswits {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(240, 248, 255, 0.616);
+}
+
+.TID_head {
+
+  font-size: 3vw;
+  font-weight: 700;
+  color: rgb(207, 233, 255);
+}
+.Local_timess{
+  background-color: rgba(255, 255, 255, 0.815);
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 5px;
+  font-weight: 600;
+  color: black;
+  font-size: 13px;
+
+}
+.Roww{
+  font-size: 15px;
+  gap: 10px;
+}
+.Login_Signup{
+  width: 60vw;
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  gap: 10px;
+  justify-content:flex-end;
+}
+.TID_Page{
+  display: flex;
+  flex-direction: column;
+}
+.Columnn {
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+  margin-top: 100px;
+  width: 48vw;
+}
+.Phone_otp_blockk{
+  background-color: transparent;
+}
+.Roww {
+  display: flex;
+  flex-direction: row;
+}
+
+.TID_desc {
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(240, 248, 255, 0.856);
+  margin-top: 10px;
+  width: 35vw;
+}
+
+strong {
+  color: rgba(255, 255, 255, 0.856);
+}
+.Phone_field {
+  padding: 10px;
+  width: fit-content;
+  border-radius: 10px;
+  background-color: #0f1535;
+  border: 0.1px solid #93a1b4;
+  font-size: small;
+  font-weight: 700;
+  color: aliceblue;
+}
+.OTP_field{
+  
+  padding: 10px;
+  width: 70px;
+  border-radius: 10px;
+  background-color: #0f1535;
+  border: 0.1px solid #93a1b4;
+  font-size: small;
+  font-weight: 700;
+  color: aliceblue;
+}
+.Phone_text{
+  font-size: 15px;
+  font-weight: 500;
+}
+.Meet_link {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  padding: 10px;
+  width: fit-content;
+  border-radius: 10px;
+  background-color: #0f1535;
+  border: 0.1px solid #93a1b4;
+  font-size: small;
+  font-weight: 500;
+  color: aliceblue;
+  cursor: pointer;
+}
+i{
+  font-size:15px;
+  color: rgba(240, 248, 255, 0.788);
+  font-weight: 400; 
+}
+tt{
+font-size: 20px;
+color: rgba(240, 248, 255, 0.767);
+}
+.Roww_ {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Phonee {
+  margin-top: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.842);
+}
+
+.Join_at {
+  font-size: 22px;
+  margin-top: 30px;
+}
+
+.Column_ {
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+  width: 43vw;
+  gap: 1vw;
+}
+
+.Send_otp {
+  background-color: #582cff;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 800;
+  color: rgba(240, 248, 255, 0.767);
+  border-radius: 9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
+  cursor: pointer;
+  max-width: 135px;
+text-transform: capitalize;
+
+}
+
+.Roww {
+  gap: 10px;
+}
+
+.Send_otp:hover {
+  background-color: #4a18ff;
+  border: 1px solid rgba(255, 255, 255, 0.425);
+}
+
+@media screen and (max-width: 1500px) {
+  .TID_join {
+    width: 80vw;
+    height: fit-content;
+    margin-top: 5vw;
+  }
+  .TID_desc {
+    font-size: 16px;
+    width: 70vw;
+  }
+  .Columnn{
+    margin-left: 30px;
+    margin-top: 30px;
+  }
+  .TID_head{
+    font-size: 10.2vw;
+  }
+  
+.Column_ {
+  margin-left: 20vw;
+  align-items: center;
+}
+.Roww{
+  flex-direction: column;
+  align-items: center;
+}
+.Roww_{
+  flex-direction: column;
+  align-items: center;
+}
+}

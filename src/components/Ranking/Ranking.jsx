@@ -29,6 +29,7 @@ const Ranking = () => {
     }
   }
 
+  fetchpoints();
     const fetchData = async () => {
       setLoading(true);
       const q = query(collection(db, "Students"),orderBy("Points","desc"));
@@ -45,7 +46,6 @@ const Ranking = () => {
     
     };
 
-    fetchpoints();
     fetchData();
     
   }, []);
@@ -64,7 +64,7 @@ const Ranking = () => {
         # Look for projects to Earn More Skill Stars
         </div>
         <div className="To_get_job">
-        # You may get <span>Tech Mahindra Intership</span> by The End Of Course
+        # You may get a job or intership by The End Of Course
         </div>
         <div className="Skill_stars">
         # You Had <span>{(points)?points:'...'}</span> Skill Stars

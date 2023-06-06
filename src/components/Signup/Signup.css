@@ -47,11 +47,11 @@ justify-content: center;
    cursor: pointer;
    background-color: rgb(108, 12, 199);
 }
-.OTP_input{
+.OTP_fieldd{
    
    background-color: #222222;
    border-radius: 10px;
-   padding: 20px;
+   padding: 5px;
    color: white;
    width: 300px;
    font-size: 20px;

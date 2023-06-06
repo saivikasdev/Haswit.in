@@ -130,7 +130,7 @@ const fetch_profile_pic = async () => {
             }}
             type="text"
             className="project_details"
-            placeholder="Your answer"
+            placeholder="Your answer (Should not contain '/')"
             rows="10"
             cols="130"
             minLength="15"

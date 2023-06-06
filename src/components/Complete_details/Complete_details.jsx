@@ -2,14 +2,17 @@
 import React from 'react'
 import { useState } from 'react'
 import './Complete_details.css'
-import { doc, Firestore, setDoc, Timestamp } from "firebase/firestore";
-import { db } from "../../firebase-config";
+import { doc, Firestore, getDoc, setDoc, Timestamp } from "firebase/firestore";
+import { authentication, db } from "../../firebase-config";
 import whatsAppClient from "@green-api/whatsapp-api-client";
 import { useNavigate } from "react-router-dom";
 import Profile_pictures from '../../Profile_pictures';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Cookies from 'universal-cookie';
 const Complete_details = () => {
+  
+  const cookies = new Cookies();
   const [Name, setName] = useState('')
   const [Whatsapp, setWhatsapp] = useState()
   const [randomotp, setrandomotp] = useState(Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000)
@@ -28,7 +31,7 @@ const Complete_details = () => {
 
   const navigate = useNavigate();
   function handleClick() {
-    navigate("/");
+    navigate("/home");
 
     console.log('///////')
   }
@@ -71,31 +74,6 @@ else{
 
 
 
-  const verify_otp = async () => {
-    console.log(otp)
-    console.log(randomotp.toString())
-
-if(otp===randomotp.toString()){
-  setfinal_wtsp_number(Whatsapp)
-  
-  console.log('++++++++++++')
-  
-  console.log(final_wtsp_number)
-  
-  setbutton2('Verified')
-  toast('Whatsapp number verified Successfully', {
-    position: toast.POSITION.BOTTOM_LEFT,
-    className: 'toast-message'
-})
-}
-else{
-  toast('invalid otp!', {
-    position: toast.POSITION.BOTTOM_LEFT,
-    className: 'toast-message'
-})
-  console.log('invalid otp')
-}
-  }
 
 
 
@@ -107,9 +85,14 @@ else{
     console.log(study_at)
     console.log(address)
 
+    const docRef = doc(db, "All_users",cookies.get('user').phoneNumber );
+    const docSnap = await getDoc(docRef);
 
-    if ((Name.length > 6 && final_wtsp_number.length > 6 && study_at.length > 6 && address.length  > 6 && about.length  > 6)) {
-          await setDoc(doc(db, "Students", window.name), {
+    if(docSnap.exists()){
+          await setDoc(doc(db, "Students", cookies.get('user').phoneNumber), {
+           Phone:cookies.get('user').phoneNumber,
+           Points:0,
+           UID:authentication.currentUser.uid,
             Name:Name,
             Whatsapp:final_wtsp_number,  
             study_at:study_at,
@@ -125,16 +108,12 @@ else{
           });
   
           })
-            
+        }
 
-    }
-    else{
-      toast('Please enter all details', {
+      toast('Complete the payment first if done contact HASWIT', {
         position: toast.POSITION.BOTTOM_LEFT,
         className: 'toast-message'
     });
-    console.log('//////////')
-    }
   }
 
 
@@ -145,7 +124,7 @@ else{
     setName(name);
   };
   const set_whatsapp = (e) => {
-    let whatsapp = e.target.value;
+    let whatsapp = e.target.value;  
     setfinal_wtsp_number(whatsapp);
   };
   const set_otp = (e) => {
@@ -180,7 +159,7 @@ else{
              
             />
             <input
-            onChange={setfinal_wtsp_number}
+            onChange={set_whatsapp}
               type="number"
               className="Whatsapp"
               placeholder="Valid Whatsapp no. to send class updates.."
