@@ -24,7 +24,7 @@ const [Jobs, setJobs] = useState([])
         setJobs([...Projects]);
          setLoading(false);
          
-    console.log(Jobs);
+    // console.log(Jobs);
       });
     
     };
@@ -35,51 +35,51 @@ const [Jobs, setJobs] = useState([])
 
 
   return (
-    <div className="Ranking_card">
-              <div class="container_ d-flex justify-content-center mt-5">
+    <div className="Ranking_card" key={props.index}>
+              <div className="container_ d-flex justify-content-center mt-5">
 
-<div class="card___">
+<div className="card___">
   
-  <div class="top-container_">
+  <div className="top-container_">
     
-    <img src={Profile_pic} class="img-fluid profile-image" width="70"/>
+    <img src={(Student)?Student.profile_pic:'....'} className="img-fluid profile-image" width="70"/>
     
-    <div class="ml-3">
-      <h5 class="name">{(Student)?Student.Name:'....'}</h5>
-      <p class="mail">UID : {(Student)?Student.UID:'....'}</p>
+    <div className="ml-3">
+      <h5 className="name">{(Student)?Student.Name:'....'}</h5>
+      <p className="mail">UID : {(Student)?Student.UID:'....'}</p>
     </div>
   </div>
 
 
-  <div class="middle-container_ d-flex justify-content-between align-items-center mt-3 p-2">
-      <div class="hashtag-div px-3">
+  <div className="middle-container_ d-flex justify-content-between align-items-center mt-3 p-2">
+      <div className="hashtag-div px-3">
         
-        <div class="round-div"><i class="fa hashtag">#</i></div>
+        <div className="round-div"><i className="fa hashtag">#</i></div>
 
       </div>
-      <div class="d-flex flex-column text-right mr-2">
-        <span class="current-balance">#{(Student)?props.index+1:'....'}</span>
-        <span class="amount"><span class="hashtag-sign"><UisFavorite color="#8757f9"/></span>{(Student)?Student.Points:'....'}</span>
+      <div className="d-flex flex-column text-right mr-2">
+        <span className="current-balance">#{(Student)?props.index+1:'....'}</span>
+        <span className="amount"><span className="hashtag-sign"><UisFavorite color="#8757f9"/></span>{(Student)?Student.Points:'....'}</span>
       </div>
 
   </div>
 
-  <div class="recent-border mt-4">
-    <span class="recent-orders">Eligible Jobs</span>
+  <div className="recent-border mt-4">
+    <span className="recent-orders">Eligible Jobs</span>
   </div>
 
   {Jobs.length > 0 &&
         Jobs.map((Job, index) => (
-          <div class="wishlist-border pt-2">
-    <span class="wishlist">{Job.job_name}</span>
+          <div className="wishlist-border pt-2" key={index}>
+    <span className="wishlist">{Job.job_name}</span>
   </div>
         ))}
   
 
 
 
-  <div class="fashion-studio-border pt-2">
-    <span class="fashion-studio">No more..</span>
+  <div className="fashion-studio-border pt-2">
+    <span className="fashion-studio">No more..</span>
   </div>
   
 </div>

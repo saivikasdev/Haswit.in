@@ -8,7 +8,7 @@ export const Features = () => {
          EXPLORE OUR FEATURES
       </div>
       <div className="Row__">
-         <div className="Feature">
+         <div className="Feature_">
             <div className="Feature_image">
             🗓️
             </div>
@@ -24,7 +24,7 @@ export const Features = () => {
             </div>
             </Link>
          </div>
-         <div className="Feature">
+         <div className="Feature_">
             <div className="Feature_image">
                💻
             </div>
@@ -40,7 +40,7 @@ export const Features = () => {
             </div>
             </Link>
          </div>
-         <div className="Feature">
+         <div className="Feature_">
             <div className="Feature_image">
             🧑‍💻
             </div>
@@ -59,7 +59,7 @@ export const Features = () => {
          
       </div>
       <div className="Row__">
-         <div className="Feature">
+         <div className="Feature_">
             <div className="Feature_image">
                🤔
             </div>
@@ -75,7 +75,7 @@ export const Features = () => {
             </div>
             </Link>
          </div>
-         <div className="Feature">
+         <div className="Feature_">
             <div className="Feature_image">
                🧑‍💼
             </div>

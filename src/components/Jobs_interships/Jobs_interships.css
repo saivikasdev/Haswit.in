@@ -91,7 +91,7 @@ color: rgb(255, 255, 255);
    
 .Jobs{
    margin-top: 20px;
-   width: 80vw;
+   width: 90vw;
    height:fit-content;
 }
 .Certifyy{
@@ -99,7 +99,7 @@ color: rgb(255, 255, 255);
 }
 
 .Jobs_head{
-   font-size: 4vw;
+   font-size: 20px;
    margin: 0px;
 }
 .Row{
@@ -108,7 +108,8 @@ color: rgb(255, 255, 255);
 .Jobs_desc{
    margin: 0px;
 width: 70vw;
-font-size: 17px;
+font-size: 15px;
+padding: 10px;
 }
 .Jobs_img{
    width: 55vw;
@@ -126,13 +127,13 @@ font-size: 17px;
    margin: 10px;
 }
 .Certifyy{
-   width: 80vw;
+   width: 90vw;
    height: fit-content;
    padding: 10px;
 
 }
 .Certify_headd{
-   font-size: 5vw;
+   font-size: 20px;
 }
 .certificatee{
    width: 70vw;
@@ -140,5 +141,6 @@ font-size: 17px;
 }
 .Certify_desc{
    width: 70vw;
+   font-size: 15px;
 }
 }

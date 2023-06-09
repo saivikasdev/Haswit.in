@@ -3,7 +3,7 @@ import './Job_card.css'
 const Job_card = (props) => {
   const { Job } = props;
   return (
-    <div className="Job_card">
+    <div className="Job_card" key={props.index}>
         <div className="Job_title">
         {Job.job_name}
         </div>

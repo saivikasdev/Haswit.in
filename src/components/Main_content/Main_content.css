@@ -20,6 +20,11 @@
     max-width: 4.5vw;
     min-width: 100px;
   }
+  .gap_projects{
+    display: flex;
+    max-width: 4.5vw;
+    min-width: 100px;
+  }
   .Row{
     display: flex;
     flex-direction: row;
@@ -31,10 +36,11 @@
   }
   @media screen and (max-width: 1200px) {
     .gap{
-      min-width: 80px;
+      min-width: 65px;
     }
     .FA_B{
-      left: 80%;
+      left: 70%;
+      top: 80%;
     }
     .Row{
       flex-direction: column;

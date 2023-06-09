@@ -204,6 +204,7 @@
 .Months{
  display: flex;
  flex-direction: row;
+ justify-content: space-evenly;
  background-color: #161616bb;
  width: fit-content;
  padding: 10px;
@@ -230,7 +231,7 @@ margin: 5px;
   font-size: 20px;
   font-weight: bold;
   color: blueviolet;
-  margin-right: 20px;
+  margin-right: 0px;
 }
 
 .name {
@@ -262,7 +263,6 @@ margin: 5px;
 }
 .Calender_component{
   width: 60vw;
-  max-height: 100vh;
 }
 .Undone{
   color: #ff1919; 
@@ -279,7 +279,7 @@ margin: 5px;
   }
   .block{
     width: 16vw;
-    height: 20vw;
+    height: fit-content;
   }
   .View_session_details{
     margin-left: 10px;
@@ -287,8 +287,7 @@ margin: 5px;
     height: 65vh;
   }
   .Calender_component{
-    width: 75vw;
-    max-height: 100vh;
+    width: 80vw;
   }
   .Calender_section{
     display: flex;
@@ -309,5 +308,28 @@ margin: 5px;
 .Session_date_,.Session_name_,.Completed,.Session_time{
   min-width: 70vw;
 }
+.date_status{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
   
+}
+
+
+
+@media screen and (max-width: 1000px) {
+
+.Months{
+  display: flex;
+  flex-direction: row;
+  background-color: #161616bb;
+  width: 75vw;
+  font-size: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0px;
+ }
+
 }

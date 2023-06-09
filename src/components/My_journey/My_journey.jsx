@@ -110,7 +110,7 @@ const My_journey = () => {
     return dates.map((name, index) => {
       const className = (index === currentDay&& month===currentDate.getMonth()) ? "block today" : "block";
       return name === null ? (
-        <div class="block other">
+        <div className="block other"key={index}>
           <div className="date__">😁</div>
           <div className="Session_name">
             <div className="text_"></div>

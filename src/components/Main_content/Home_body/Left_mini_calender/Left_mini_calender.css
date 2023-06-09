@@ -3,12 +3,13 @@
   margin-left: 25px;
   width: 60vw;
   margin-top: 20px;
-  height: 550px;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   border-radius: 30px;
+  height: 60vh;
   
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -61,13 +62,19 @@
   .Left_mini_calender_container {
     margin-left: 0px;
     width: 80vw;
+    height: fit-content;
+    gap: 10px;
   }
   .Scrollable_calender {
     width: 77vw;
   }
-
   .Current_sessions {
     width: 77vw;
+    height: fit-content;
+    gap: 10px;
+  }
+  .Main_title{
+    padding: 20px;
   }
   .title {
     display: flex;
@@ -76,22 +83,16 @@
     width: 57vw;
     align-items: center;
   }
+  
   .Calender_month{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    gap: 1px;
+    gap: 10px;
   }
 }
 
 @media screen and (max-width: 800px) {
-    .Current_sessions {
-        width: 77vw;
-        height: 100vh; 
-      }
-      .Left_mini_calender_container {
-        height: 130vh;
-      }
 
 
 }

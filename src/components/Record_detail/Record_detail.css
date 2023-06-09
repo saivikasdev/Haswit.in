@@ -109,8 +109,8 @@ iframe{
 
     iframe{
         margin-left: 0px;
-        width: 80vw;
-        height: 45vw;
+        width: 90vw;
+        height: 55vw;
         border-radius: 30px;
     }
     .Record_detail{
@@ -126,6 +126,9 @@ iframe{
 .note_title
 ,.Note_field_{
     width: 80vw;
+}
+.warning{
+    margin: 10px;
 }
 
 }

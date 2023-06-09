@@ -51,7 +51,7 @@ justify-content: center;
    
    background-color: #222222;
    border-radius: 10px;
-   padding: 5px;
+   padding: 2px;
    color: white;
    width: 300px;
    font-size: 20px;
@@ -73,4 +73,34 @@ form{
    font-size: 17px;
    width: 34vw;
    padding: 30px 20px;
+}
+
+@media screen and (max-width: 1500px) {
+   .Phone_otp_block{
+width: 80vw;
+height: 60vh;
+padding: 20px;
+   }
+   .Phone_text{
+      
+   }
+   .Phone_input{
+      width: 70vw;
+   }
+   .send_otp{
+      padding: 10px;
+      width: 70vw;
+   }
+   .OTP_fieldd{
+      
+      width: 70vw;
+   }
+   .OTP_input_{
+      
+      width: 70vw;
+   }
+   .OTP_input{
+      
+      width: 70vw;
+   }
 }

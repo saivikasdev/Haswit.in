@@ -175,7 +175,7 @@ else{
             className="Phone_input"
             placeholder="Enter Your Phone number"
             onChange={set_phone}
-            maxlength="13"
+            maxLength="13"
             minLength="11"
             required
           />
@@ -190,7 +190,7 @@ else{
                 className="OTP_input_"
                 placeholder="6 digit OTP"
                 onChange={verifyotp}
-                maxlength="6"
+                maxLength="6"
                 minLength="6"
                 required
 

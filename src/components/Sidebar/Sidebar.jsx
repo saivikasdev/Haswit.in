@@ -20,7 +20,7 @@ function Sidebar() {
   const fetchprofile_pic = async () => {
     const docRef = doc(db, "Students", cookies.get('user').phoneNumber);
     const docSnap = await getDoc(docRef);
-    console.log("Document data:", docSnap.data().profile_pic);
+    // console.log("Document data:", docSnap.data().profile_pic);
     if (docSnap.exists()) {
       setprofile_pic(docSnap.data().profile_pic)
     } else {
@@ -41,7 +41,7 @@ function Sidebar() {
       <div className="main_menu">
         {Side_menu_data.map((item, index) => {
           return (
-           <Tooltip title = {item.name}>
+           <Tooltip title = {item.name} key={index}>
             
             <Link to={item.link}>
              <div className={selected === index?'menu_item active': 'menu_item'} key ={index} 
@@ -58,7 +58,12 @@ function Sidebar() {
       </div>
       </div>
       <div className="profile_pic_cont">
-        <img src= {profile_pic} className="profile_image"/>
+        
+      <Link to= '/Profile_page  '>
+        <img src= {profile_pic} className="profile_image" onClick={()=>{
+
+        }}/>
+        </Link>
       </div>
     </div>
   );

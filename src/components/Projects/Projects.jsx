@@ -19,7 +19,7 @@ const Projects = () => {
       });
       setprojects([...Projects]);
        setLoading(false);
-       console.log(projects);
+      //  console.log(projects);
     });
   
   };
@@ -37,7 +37,7 @@ const Projects = () => {
         <div className="Projects_grid">
             {projects.length > 0 &&
         projects.map((project, index) => (
-          <Project_card project={project}/>
+          <Project_card project={project} key={index}/>
         ))}
         </div>
  

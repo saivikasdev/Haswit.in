@@ -196,7 +196,7 @@ return val
 return val
           }
         }).map((dought, index) => (
-          <Dought_list_tile dought={dought}/>
+          <Dought_list_tile dought={dought} key={index}/>
         ))}
       </div>
         <ToastContainer />

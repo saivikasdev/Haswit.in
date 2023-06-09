@@ -61,7 +61,7 @@
 
 @media screen and (max-width: 1500px) {
    .Topics{
-      width: 80vw;
+      width: 90vw;
       height: fit-content;
       margin-top: 40px;
       padding: 15px;
@@ -72,7 +72,7 @@
    }
    
 .Topics_head{
-   font-size:3.8vw;
+   font-size:20px;
    margin: 30px;
 }
 

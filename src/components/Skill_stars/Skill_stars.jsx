@@ -82,7 +82,7 @@ useEffect(() => {
           </div>
           {History.length > 0 && History.map((History_block,index) => (
 
-<History_card History_block = {History_block}/>
+<History_card History_block = {History_block} key={index}/>
 ))}
         </div>
         {

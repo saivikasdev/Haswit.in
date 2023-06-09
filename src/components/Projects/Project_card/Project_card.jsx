@@ -10,16 +10,16 @@ const Project_card = (props ) => {
   const cookies = new Cookies();
   const { project } = props;
   return (
-    <div className="Projects_card">
-      <div class="container">
-        <div class="card">
+    <div className="Projects_card" key={props.index}>
+      <div className="container">
+        <div className="card">
           <div className="Points">
             {project.Points}
             <UisFavorite />
           </div>
-          <div class="contentBx">
+          <div className="contentBx">
             <h2>{project.Project_name}</h2>
-            <div class="Desc">{project.Details}</div>
+            <div className="Desc">{project.Details}</div>
               <div onClick={()=>{
                 cookies.set('project', project.Project_name, { path: '/' })
 

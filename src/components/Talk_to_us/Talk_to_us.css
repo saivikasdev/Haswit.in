@@ -82,11 +82,14 @@ margin: 10px;
    .Roww___{
       flex-direction: column;
       margin-bottom: 20px;
+      height: fit-content;
+      padding: 20px;
+      width: 90vw;
    }
    
 .Talk_to_uss{
 width: 80vw;
-height: 35vh;
+height: fit-content;
 margin-bottom: 5vh;
 justify-content: space-evenly;
 padding-bottom: 30px;
@@ -94,14 +97,14 @@ padding-bottom: 30px;
 
 .Lets_talk{
    
-   font-size: 7vw;
+   font-size: 20px;
 }
 
 .Contact_us{
-   font-size: 3vw;
+   font-size: 15px;
 }
 .Lets_talk_aboutt{
    
-   margin-bottom: 20px;
+   margin-bottom: 50px;
 }
 }

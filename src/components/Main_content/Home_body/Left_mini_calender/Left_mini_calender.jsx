@@ -111,7 +111,7 @@ const [Current_name, setCurrent_name] = useState();
     };
     fetchData();
 
-    console.log(Dates_);
+    // console.log(Dates_);
   }, []);
 
 

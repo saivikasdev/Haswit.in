@@ -183,7 +183,7 @@ const [Project, setProject] = useState([])
           </div>
       {Bids.length > 0 && Bids.map((Bid,index) => (
 
-<div className="Bid_card">
+<div className="Bid_card" key={index}>
   {Bid.User}
 </div>
 ))}

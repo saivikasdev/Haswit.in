@@ -121,8 +121,10 @@ setloading(false)
             allow="autoplay"
           ></iframe>
 
+<div className="warning">
 Coming back without test attempting will add 0 Skill stars So first prepare and go to test !
 
+</div>
 {(() => {
  
 if(Session_Students){

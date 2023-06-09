@@ -148,7 +148,7 @@ const LiveCodeEditor = () => {
                 type="text"
                 className="code_title"
                 placeholder="Code title"
-              maxlength="10"
+              maxLength="10"
               minLength="5"
               required
                 onChange={(e) => {

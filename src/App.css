@@ -15,7 +15,9 @@
 
 @media screen and (max-width: 1600px) {
 
-
+.App{
+  height: fit-content;
+}
   .gap{
       display: none;
   }

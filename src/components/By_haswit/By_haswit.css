@@ -35,15 +35,15 @@ margin-top: 5vw;
 @media screen and (max-width: 1500px) {
   .By_haswit{
    margin-top: 20px;
-    width: 80vw;
+    width: 90vw;
     height: fit-content;
   }
   .By_haswit_head{
-    font-size: 7vw;
+    font-size: 20px;
   }
   .By_haswit_desc{
     
-   font-size: 3vw;
+   font-size: 15px;
    width: 70vw;
   }
 }

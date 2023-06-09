@@ -38,7 +38,7 @@ const [Loading, setLoading] = useState(false)
         cookies.set('dought', dought.Dought, { path: '/' })
 
       }
-    }>
+    } key={props.index}>
         <div className="Dought_que">
             {dought.Dought}
         </div>

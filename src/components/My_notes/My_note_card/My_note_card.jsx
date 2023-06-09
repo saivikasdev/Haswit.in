@@ -10,16 +10,16 @@ const My_note_card = (props) => {
     <div className="My_note_card" onClick={()=>{
       
       cookies.set('Note', Note.Note_title, { path: '/' })
-    }}>
-<div class="card card__">
-      <h2 class="card__title">{Note.Note_title}</h2>
-      <p class="card__apply">
+    }} key={props.index}>
+<div className="card card__">
+      <h2 className="card__title">{Note.Note_title}</h2>
+      <p className="card__apply">
       {Note.session}
       </p>
-      <p class="card__apply">
+      <p className="card__apply">
       {Note.time}
       </p>
-      <p class="View_now">
+      <p className="View_now">
         View &gt;
       </p>
     </div>

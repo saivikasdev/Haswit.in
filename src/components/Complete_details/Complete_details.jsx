@@ -153,7 +153,7 @@ else{
               type="text"
               className="Name"
               placeholder="Enter Your Name"
-              maxlength="20"
+              maxLength="20"
               minLength="10"
               required
              
@@ -163,7 +163,7 @@ else{
               type="number"
               className="Whatsapp"
               placeholder="Valid Whatsapp no. to send class updates.."
-              maxlength="13"
+              maxLength="13"
               minLength="10"
               required
             />
@@ -172,7 +172,7 @@ else{
           type="text"
           className="Studies_at"
           placeholder="Studying at"
-          maxlength="25"
+          maxLength="25"
           minLength="10"
           required
          
@@ -182,7 +182,7 @@ else{
           type="text"
           className="Address"
           placeholder="Enter Your Address"
-          maxlength="30"
+          maxLength="30"
           minLength="20"
           required
          
@@ -194,7 +194,7 @@ else{
               placeholder="About me"
               rows="10"
               cols="130"
-              maxlength="100"
+              maxLength="100"
               minLength="30"
               required
             ></textarea>

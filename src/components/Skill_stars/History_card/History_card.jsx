@@ -4,7 +4,7 @@ import { UisFavorite } from '@iconscout/react-unicons-solid';
 const History_card = (props) => {
   const {History_block} = props;
   return (
-    <div className="History_card">
+    <div className="History_card" key={props.index}>
         <div className="history_row">
         <div className="Points_scored">
           {History_block.Points}

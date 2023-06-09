@@ -46,7 +46,7 @@ const cookies = new Cookies();
       
   
       
-      console.log("Document data:", docSnap.data());
+     // console.log("Document data:", docSnap.data());
       
       if (class_at) {
       fetchLocalTimes();
@@ -211,7 +211,7 @@ const cookies = new Cookies();
 <select>
   
   {localTimes.map((localTime, index) => (
-    <option>{localTime.country}: {localTime.time}</option>
+    <option key={index}>{localTime.country}: {localTime.time}</option>
   
 ))}
 </select></div>

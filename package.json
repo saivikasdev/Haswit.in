@@ -1,7 +1,6 @@
 {
   "name": "haswit",
   "version": "0.1.0",
-  "homepage": "https://saivikasdev.github.io/Haswit.in",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",

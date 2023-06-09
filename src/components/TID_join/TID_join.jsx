@@ -6,11 +6,12 @@ import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import copy from "copy-to-clipboard";  
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
-import { authentication } from "../../firebase-config";
+import { authentication_ } from "../../TID_firebase-config";
 import Cookies from 'universal-cookie';
-import { db } from "../../firebase-config";
+import { db_ } from "../../TID_firebase-config";
 import { doc, setDoc, Timestamp ,getDoc} from "firebase/firestore";
 import { AiOutlineRight } from 'react-icons/fa';
+import Loader from "../Loader";
 export const TID_join = () => {
   const cookies = new Cookies();
   
@@ -36,41 +37,75 @@ export const TID_join = () => {
         size: "invisible",
         callback: (response) => {},
       },
-      authentication
+      authentication_
     );
   };
 
 
+  const [loading, setLoading] = useState(false);
 
   const copyToClipboard = () => {
     copy('https://meet.google.com/wev-dmwr-mnv');
     alert(`You have copied "${'https://meet.google.com/wev-dmwr-mnv'}"`);
  }
 
-  const requestOTP = (e) => {
+  const requestOTP = async (e) => {
     console.log('working fine..')
     e.preventDefault();
     if (Phone.length >= 12) {
       
-      Recaptcha();
-      let appverifier = window.recaptchaVerifier;
-      signInWithPhoneNumber(authentication, Phone, appverifier)
-        .then((conformationResult) => {
-          window.conformationResult = conformationResult;
+    setLoading(true);
+      
+    const docRef = doc(db_, "Tech_inno_drive",Phone );
+    const docSnap = await getDoc(docRef);
+    if(docSnap.exists()){
+      console.log(doc)
+      console.log(authentication_.currentUser.phoneNumber)
+      await setDoc(doc(db_, "Tech_inno_drive", Phone), {
+        Phone: Phone,
+      called:false
+      }).then(()=>{
 
-          toast('OTP sent', {
-            position: toast.POSITION.BOTTOM_LEFT,
-            className: 'toast-message'
-        });
-    setotp_block(true);
-        })
-        .catch((error) => {
-          console.log(error);
-          toast('Something went wrong please try again!', {
-            position: toast.POSITION.BOTTOM_LEFT,
-            className: 'toast-message'
-        });
-        });
+        setSent(true);
+        console.log('Otp verified succesfully')
+      });
+    }
+    else{
+      await setDoc(doc(db_, "Tech_inno_drive", Phone), {
+        Phone: Phone,
+        
+      called:false      
+      }).then(()=>{
+
+        setSent(true);
+        console.log('Otp verified succesfully')
+      });
+
+      
+
+
+    }
+    //   Recaptcha();
+    //   let appverifier = window.recaptchaVerifier;
+    //   signInWithPhoneNumber(authentication_, Phone, appverifier)
+    //     .then((conformationResult) => {
+    //       window.conformationResult = conformationResult;
+
+    //       toast('OTP sent', {
+    //         position: toast.POSITION.BOTTOM_LEFT,
+    //         className: 'toast-message'
+    //     });
+    // setotp_block(true);
+    //     })
+    //     .catch((error) => {
+    //       console.log(error);
+    //       toast('Something went wrong please try again!', {
+    //         position: toast.POSITION.BOTTOM_LEFT,
+    //         className: 'toast-message'
+    //     });
+    //     });
+        
+    setLoading(false);
         
     }
   };
@@ -83,9 +118,11 @@ export const TID_join = () => {
     let Otp = e.target.value;
     setOTP(Otp);
 
-    const docRef = doc(db, "Tech_inno_drive",Phone );
+    const docRef = doc(db_, "Tech_inno_drive",Phone );
     const docSnap = await getDoc(docRef);
     if (e.target.value.length === 6) {
+      
+    setLoading(true);
       let conformationresult = window.conformationResult;
       conformationresult
         .confirm(e.target.value)
@@ -94,11 +131,11 @@ export const TID_join = () => {
             position: toast.POSITION.BOTTOM_LEFT,
             className: 'toast-message'
         });
-          cookies.set('user', result.user, { path: '/' });
+          // cookies.set('user', result.user, { path: '/' });
           if(docSnap.exists()){
             console.log(doc)
-            console.log(authentication.currentUser.phoneNumber)
-            await setDoc(doc(db, "Tech_inno_drive", Phone), {
+            console.log(authentication_.currentUser.phoneNumber)
+            await setDoc(doc(db_, "Tech_inno_drive", Phone), {
               Phone: Phone,
             called:false
             }).then(()=>{
@@ -110,8 +147,8 @@ export const TID_join = () => {
           else{
             console.log(result)
             console.log(result.user)
-            authentication.currentUser.phoneNumber=result.user.phoneNumber
-            await setDoc(doc(db, "Tech_inno_drive", Phone), {
+            authentication_.currentUser.phoneNumber=result.user.phoneNumber
+            await setDoc(doc(db_, "Tech_inno_drive", Phone), {
               Phone: Phone,
               
             called:false      
@@ -129,13 +166,15 @@ export const TID_join = () => {
           
           // console.log(result.user.me)
           // console.log(result.user)
-          // handleClick()
+          // handleClick
             
 
         })
         .catch((error) => {
           console.log(error);
         });
+        
+    setLoading(false);
     }
   };
 
@@ -145,7 +184,7 @@ export const TID_join = () => {
 
   const fetchLocalTimes = async () => {
     const countries = [
-      { name: 'United States', timezone: 'America/New_York' },
+      { name: 'United States', timezone: 'America/New_York'},
 { name: 'United Kingdom', timezone: 'Europe/London' },
 { name: 'Australia', timezone: 'Australia/Sydney' },
 { name: 'Canada', timezone: 'America/Toronto' },
@@ -228,7 +267,7 @@ export const TID_join = () => {
 <select className="Local_timess">
   
   {localTimes.map((localTime, index) => (
-    <option>{localTime.country}: {localTime.time}</option>
+    <option key={index}>{localTime.country}: {localTime.time}</option>
    
 ))}
 </select>
@@ -256,38 +295,38 @@ export const TID_join = () => {
           
          <div className="Roww">
             
-            <input type="tel" placeholder="Enter your Phone number..." className="Phone_field"
+            <input type="number" placeholder="Phone number (+91)" className="Phone_field"
             
             onChange={set_phone}
-              maxlength="13"
+              maxLength="13"
               minLength="11" required/>
               
           <button className="Send_otp" type="submit">
-           SEND OTP 
+           Notify me
           </button>
   
           
-          {otp_block === true ? (
+          {/* {otp_block === true ? (
             <>
   
                 
             <input type="telephone" placeholder="OTP" className="OTP_field"
             
             onChange={verifyotp}
-              maxlength="6"
+              maxLength="6"
               minLength="6"
               
               required
               />
             </>
-          ) :null}
+          ) :null} */}
          </div>
           </form>
           </>)
           : (<>
           <div className="Phone_text">
             
-          Otp verified succesfully
+            You will be notified
             Link will be sent..
           </div>
             </>)
@@ -306,6 +345,10 @@ export const TID_join = () => {
       
       <div id="Recaptcha"></div>
     </div>
+    
+    {
+      (loading)?
+      <Loader/>:null}
     </div>
   );
 };

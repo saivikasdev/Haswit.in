@@ -99,7 +99,8 @@
     width: 65vw;
   }
 .text {
-  font-size: 3vw
+  font-size: 3vw;
+  height: fit-content;
 };
 
 

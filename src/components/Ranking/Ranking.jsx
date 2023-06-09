@@ -41,7 +41,7 @@ const Ranking = () => {
         setStudents([...Projects]);
          setLoading(false);
          
-    console.log(Students);
+    // console.log(Students);
       });
     
     };
@@ -58,13 +58,13 @@ const Ranking = () => {
       </div>
       <div className="Headings_grid">
         <div className="Complete_rec">
-        # Complete Records Upto Date 
+        # Complete <span>Records</span> Upto Date 
         </div>
         <div className="Do_projects_">
-        # Look for projects to Earn More Skill Stars
+        # Look for projects to Earn More <span>Skill Stars</span>
         </div>
         <div className="To_get_job">
-        # You may get a job or intership by The End Of Course
+        # You may get a <span>job or intership </span>by The End Of Course
         </div>
         <div className="Skill_stars">
         # You Had <span>{(points)?points:'...'}</span> Skill Stars
@@ -81,7 +81,7 @@ const Ranking = () => {
             cookies.set('Rank', index+1, { path: '/' })
           }
 
-         return <Ranking_card Student={Student} index ={index}/>
+         return <Ranking_card Student={Student} index ={index} key={index}/>
 
       })}
       </div>

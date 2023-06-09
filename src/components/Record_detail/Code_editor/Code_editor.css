@@ -27,7 +27,7 @@
 }
 
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
    .code_row{
       flex-direction: column;
    }
@@ -43,5 +43,14 @@
    .Code_field{
       width: 80vw;
    }
+   .add_note_form{
+   width: 70vw;
+      display: flex;
+      flex-direction: row;
+      margin: 10px;
+   }
    
+   .code_title{
+      width: 40vw;
+   }
 }

@@ -37,6 +37,7 @@ import Tech_ID from "./Tech_ID";
 import Login from "./components/Login/Login";
 import Complete_details_route from "./components/Com_det_route";
 import Payment_route from "./Payment_route";
+import Contact from "./Contact";
 function App() {
   const [project, setproject] = useState("");
   const [sidebar, setsidebar] = useState(true);
@@ -53,47 +54,47 @@ function App() {
   // }, []);
 
 
-  useEffect(() => {
+//   useEffect(() => {
 
 
 
-    const fetch_current = async () =>{
-       const docRef = doc(db,cookies.get('session_month'), cookies.get('session_date'));
-   const docSnap = await getDoc(docRef);
-   if (docSnap.exists()) {
-     cookies.set('File', docSnap.data().file, { path: '/' })
+//     const fetch_current = async () =>{
+//        const docRef = doc(db,cookies.get('session_month'), cookies.get('session_date'));
+//    const docSnap = await getDoc(docRef);
+//    if (docSnap.exists()) {
+//      cookies.set('File', docSnap.data().file, { path: '/' })
  
-     cookies.set('Test', docSnap.data().test, { path: '/' })
-     console.log(docSnap.data().file);
-   } else {
-     // doc.data() will be undefined in this case
-     cookies.set('File', false, { path: '/' })
+//      cookies.set('Test', docSnap.data().test, { path: '/' })
+//      console.log(docSnap.data().file);
+//    } else {
+//      // doc.data() will be undefined in this case
+//      cookies.set('File', false, { path: '/' })
  
-     cookies.set('Test', 'false', { path: '/' })
-    }
-   }
-   fetch_current();
-   const fetchData = async () => {
-    const docRef = doc(db, cookies.get("session_month").toString(), cookies.get("session_date").toString());
-    const docSnap = await getDoc(docRef);
-    if (docSnap.exists()) {
-      cookies.set('Status', docSnap.data().Students.includes(cookies.get("user").phoneNumber), { path: '/' })
+//      cookies.set('Test', 'false', { path: '/' })
+//     }
+//    }
+//    fetch_current();
+//    const fetchData = async () => {
+//     const docRef = doc(db, cookies.get("session_month").toString(), cookies.get("session_date").toString());
+//     const docSnap = await getDoc(docRef);
+//     if (docSnap.exists()) {
+//       cookies.set('Status', docSnap.data().Students.includes(cookies.get("user").phoneNumber), { path: '/' })
 
-      console.log(docSnap.data().session_file);
-    } else {
+//       console.log(docSnap.data().session_file);
+//     } else {
       
-      cookies.set('Status',false, { path: '/' })
-      // doc.data() will be undefined in this case
-      console.log("No such document!");
-    }
+//       cookies.set('Status',false, { path: '/' })
+//       // doc.data() will be undefined in this case
+//       console.log("No such document!");
+//     }
 
 
 
-  }
-fetchData();
+//   }
+// fetchData();
 
 
- }, [])
+//  }, [])
  
 
 
@@ -153,31 +154,25 @@ fetchData();
             />
             
             <Route
-            path="Privacy-policy"
-            element ={
-              <Private_routes>
-              window.location.href="https://merchant.razorpay.com/policy/LxzvH16ruCuujc/privacy"
-
-              </Private_routes>
-            }/>
-            <Route
-            path="Terms-conditions"
-            element ={
-              
-              <Private_routes>
-              window.location.href="https://merchant.razorpay.com/policy/LxzvH16ruCuujc/terms"
-
-              </Private_routes>
-            }/>
-            <Route
-            path="Cancellation-refund"
-            element ={
-              
-              <Private_routes>
-              window.location.href="https://merchant.razorpay.com/policy/LxzvH16ruCuujc/refund"
-
-              </Private_routes>
-            }/>
+  path="/Privacy-policy"
+  element={<a href="https://merchant.razorpay.com/policy/LxzvH16ruCuujc/privacy">Privacy Policy</a>}
+/>
+<Route
+  path="/Terms-conditions"
+  element={<a href="https://merchant.razorpay.com/policy/LxzvH16ruCuujc/terms">Terms & Conditions</a>}
+/>
+<Route
+  path="/Cancellation-refund"
+  element={<a href="https://merchant.razorpay.com/policy/LxzvH16ruCuujc/refund">Cancellation & Refund</a>}
+/>
+<Route
+              path="Contact"
+              element={
+                  
+                     <Contact/>
+                  
+              }
+            />
             <Route
               path="Ranking"
               element={
@@ -362,18 +357,9 @@ fetchData();
               path="Test"
               element={
                 <Private_routes>
-                  <Test_route>
-                  {(() => {
- if (cookies.get("session_date")&&cookies.get("session_month")&&cookies.get("Test")===true) {
-  return (
-    <Quiz/>
-  )
-} else {
-  return null
-}
-})()}
                   
-                  </Test_route>
+    <Quiz/>
+                  
                 </Private_routes>
               }
             />

@@ -81,7 +81,7 @@
       display: flex;
       gap: 10px;
   }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 1200px) {
       .top_row{
           display: flex;
           flex-direction: column;
@@ -91,11 +91,36 @@
       }
       
       .profile_pic{
-        width: 120px;
+        width: 60px;
+        border-radius: 20px;
     }
 
     
   .top_profile_div{
-    width: 370px;
+    width: 75vw;
   }
+  .Profile_name{
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bolder;
+
+}
+  .UID {
+    font-size: 12px;
+    width: 55vw;
+    word-break: break-all;
   }
+  .work{
+
+    font-size: 12px;
+    width: 55vw;
+    word-break: break-all;
+  }
+  .top_profile_right_div{
+    padding: 10px;
+  }
+  .address{
+    width: 70vw;
+    word-break: break-all;
+}
+}

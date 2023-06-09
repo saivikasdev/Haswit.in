@@ -1,9 +1,9 @@
 import React from 'react'
 import './Best_mentors.css'
 
-import Mentor1 from '../../../images/mentor1.jpg';
+import Mentor1 from '../../../images/Mentor1.jpg';
 import Mentor2 from '../../../images/mentor2.jpg';
-import Mentor3 from '../../../images/mentor3.webp';
+import Mentor3 from '../../../images/mentor 3.jpg';
 export const Best_mentors = () => {
   return (
     <div className="Best_mentors">

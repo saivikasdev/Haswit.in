@@ -1,8 +1,7 @@
 .Dought_list_tile{
     cursor: pointer;
     width: 90vw;
-    max-height: 200px;
-    min-height: 100px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -47,7 +46,7 @@
     .Dought_list_tile{
         display: flex;
         flex-direction: column;
-        height: max-content;
+        height: fit-content;
     width: 80vw;
         margin: 0px;
         margin-bottom: 10px;
@@ -69,7 +68,7 @@
     }
     .Dought_que{
         padding: 6px;
-        width: 30vw;
+        width: 70vw;
         font-size: 12px;
         font-weight: 400;
     } 

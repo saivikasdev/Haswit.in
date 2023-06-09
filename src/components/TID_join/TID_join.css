@@ -177,7 +177,8 @@ text-transform: capitalize;
 
 @media screen and (max-width: 1500px) {
   .TID_join {
-    width: 80vw;
+    width: 90vw;
+    padding: 10px;
     height: fit-content;
     margin-top: 5vw;
   }
@@ -204,5 +205,9 @@ text-transform: capitalize;
 .Roww_{
   flex-direction: column;
   align-items: center;
+}
+.Login_Signup{
+  width: 90vw;
+
 }
 }

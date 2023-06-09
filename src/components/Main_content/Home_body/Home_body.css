@@ -105,6 +105,8 @@ select{
 }
 @media screen and (max-width: 1200px) {
     .Row___{
+        margin: 0px;
+        margin-top: 10px;
         width: 75vw;
         display: flex;
         align-items: center;
@@ -120,9 +122,10 @@ select{
     }
 
 .live_banner{
-    height: 43vw;
+    height: fit-content;
     margin-left: 0px;
-    width: 80vw;
+    width: fit-content;
+    min-width: 75vw;
 }
 
 
@@ -138,8 +141,15 @@ select{
 
 .join_now{
     margin-top: 3vw;
-    margin-left: 3vw;
-    margin-right: 4vw;
+    margin-left: 2vw;
+    margin-right: 3vw;
+    width: fit-content;
+    font-size: 10px;
+}
+select{
+    background-color: #22222293;
+    border-radius: 5px;
+    width: 50vw;
 }
 .small_text{
     margin-bottom: 5vw;
@@ -153,7 +163,6 @@ select{
 
 
 .date__{
-    font-size: small;
     margin: 10px;
     
 }

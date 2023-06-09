@@ -19,17 +19,17 @@ const My_code_card = (props) => {
       cookies.set('html', Code.html, { path: '/' })
       cookies.set('css', Code.css, { path: '/' })
       cookies.set('js', Code.js, { path: '/' })
-    }}>
-<div class="card_ card_">
-      <h2 class="card__title">{Code.code_title}</h2>
-      <p class="card__apply">
+    }} key ={props.index}>
+<div className="card_ card_">
+      <h2 className="card__title">{Code.code_title}</h2>
+      <p className="card__apply">
         {Code.session}
       </p>
-      <p class="View_now">
+      <p className="View_now">
         {Code.time}
       </p>
       <p> <UilArrow/> </p>
-      <p class="card__apply">
+      <p className="card__apply">
         View &gt;
       </p>
     </div>

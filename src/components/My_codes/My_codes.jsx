@@ -38,7 +38,7 @@ const cookies = new Cookies();
      <div className="My_codes_grid">
      {Codes.length > 0 && Codes.map((Code,index) => (
 
-<My_code_card Code={Code}/>
+<My_code_card Code={Code} key={index}/>
 ))}
      </div>
      {

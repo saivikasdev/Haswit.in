@@ -97,7 +97,7 @@ color: rgba(255, 255, 255, 0.589);
 
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
   .Help_content{
     flex-direction: column;
   
@@ -123,12 +123,27 @@ margin:0px ;
   flex-direction: column;
   justify-content: space-evenly;
   border-radius:30px ;
-  margin-left:30px;
 }
 .Help_body {
   width: 77%;
 }
 .Contact_us_pic{
   width: 400px;
+}
+.Help_text{
+  margin-top: 0px;
+  width: 75vw;
+}
+
+.Help_card{
+  margin: 0px;}
+  
+.Help_content{
+  padding: 0px;
+  width: 75vw;
+}
+.Help{
+  height: 240vh;
+   background-color: #22222200;
 }
 }

@@ -146,7 +146,7 @@ const fetch_profile_pic = async () => {
     ) : null}
        <div className="Answers_">
        {answers.length > 0 && answers.map((answer,index) => (
-        <div className="Answer_tile">
+        <div className="Answer_tile" key={index}>
             <div className="answer">
             {answer.Answer}
             </div>

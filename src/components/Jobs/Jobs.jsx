@@ -38,7 +38,7 @@ const [loading, setLoading] = useState(false);
 <div className="Job_card_grid">
 {Jobs.length > 0 &&
         Jobs.map((Job, index) => (
-          <Job_card Job={Job}/>
+          <Job_card Job={Job} key={index}/>
         ))}
 
 </div>

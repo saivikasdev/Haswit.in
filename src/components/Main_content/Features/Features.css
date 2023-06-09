@@ -36,7 +36,7 @@ justify-content: space-evenly;
    font-weight: 800;
    color: rgb(123, 0, 255);
 }
-.Feature{
+.Feature_{
    background-color: #2929299c;
    border-radius: 20px;
    padding: 20px;
@@ -58,7 +58,7 @@ justify-content: space-evenly;
    font-size: 5vw;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1200px) {
    
 .Row__{
    
@@ -68,14 +68,14 @@ justify-content: space-evenly;
 .Features{
    width: 75vw;
    margin: 10px;
-   height: 450vw;
+   height: fit-content;
    justify-content:flex-start;
 }
 
 .Feature_image{
    font-size: 20vw;
 }
-.Feature{
+.Feature_{
    width: 70vw;
    height: 80vw;
    margin: 10px;

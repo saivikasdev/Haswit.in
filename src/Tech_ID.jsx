@@ -9,6 +9,7 @@ import { Topics } from './components/Topics/Topics';
 import bg from './images/Background.png'
 import { UilPhone } from '@iconscout/react-unicons'
 import { useState } from 'react';
+import { Link } from "react-router-dom";
 
 import copy from "copy-to-clipboard";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
@@ -28,7 +29,25 @@ function Tech_ID() {
       <Mentor_opinions_price />
       <Features />
 <Talk_to_us/>
-
+<Link to='/cancellation-refund'>
+<div className="Links">
+cancellation-refund
+</div>
+</Link>
+<Link to='/Privacy-policy'>
+<div className="Links">
+Privacy-policy
+</div>
+</Link>
+<Link to='/Terms-conditions'>
+<div className="Links">
+Terms-conditions
+</div>
+</Link>
+<Link to='/Contact'><div className="Links" >
+Contact
+</div>
+</Link>
       <div className="FAB" onMouseOver={() => {
         setnumber(true)
       }}

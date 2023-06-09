@@ -39,13 +39,13 @@
    font-size: 15px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1200px) {
    .Row_{
       flex-direction: column;
       width: 70vw;
    }
    .Adv{
-      height: 270vw;
+      height: fit-content;
       width: 75vw;
       margin-left: 0px;
    }
@@ -57,5 +57,9 @@
 .Adv_title{
    font-size: 6vw;
    margin: 10px;
+}
+.Adv_block_desc{
+   width: 70vw;
+   font-size: 15px;
 }
 }

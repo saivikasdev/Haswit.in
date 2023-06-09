@@ -36,8 +36,12 @@
   align-items: center;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
   .Profile_body{
     width: 80vw;
+  }
+  
+  .logout_button{
+    width: 60vw;
   }
 }

@@ -80,13 +80,18 @@ color: aliceblue;
   
   /* RESPONSIVE */
   
-  @media (max-width: 800px) {
+  @media (max-width: 1200px) {
+    .My_note_card{
+      width: 60vw;  
+      
+    }
     .cards {
       justify-content: center;
     }
     .card__{
-        width: 350px;
-        background-color: red;
+        width: 70vw;
+        
+    grid-template-rows: 10px 50px 1fr 10px;
     }
   }
   

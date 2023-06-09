@@ -121,4 +121,40 @@ padding: 10px;
     flex-direction: column;
     }
 
+
+
+
+
+    
+.Percentage_completed_{
+height: fit-content;
+}
+
+.Ranking_position{
+    height: fit-content;
+
+}
+.Skill_stars_gained{
+    height: fit-content;
+
+}
+.Days_left{
+
+    height: fit-content;
+}
+.Ranking_position_value{
+    font-size: 20vw;
+}
+.Skill_stars_value{
+    font-size: 20vw;
+
+}
+.Percentage_completed_value{
+    font-size: 20vw;
+
+}
+.Days_left_value{
+    font-size: 20vw;
+    
+}
 }

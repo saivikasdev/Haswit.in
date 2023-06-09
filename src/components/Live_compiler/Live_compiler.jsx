@@ -6,7 +6,7 @@ const LiveCodeEditor = () => {
     <iframe
     className='editor'
       src="https://codesandbox.io/s/react-new"
-      frameborder="0"
+      frameBorder="0"
       allowFullScreen
     ></iframe>
   );

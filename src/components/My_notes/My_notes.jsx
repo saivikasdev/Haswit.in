@@ -38,7 +38,7 @@ const My_notes = () => {
      <div className="My_notes_grid">
      {Notes.length > 0 && Notes.map((Note,index) => (
 
-<My_note_card Note={Note}/>
+<My_note_card Note={Note} key={index}/>
 ))}
      </div>
      {

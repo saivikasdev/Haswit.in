@@ -7,22 +7,33 @@ import { doc, getDoc } from 'firebase/firestore';
 
 const Private_routes = ({ children }) => {
   const cookies = new Cookies();
-  const docRef = doc(db, 'Students', cookies.get('user').phoneNumber);
-  const navigate = useNavigate(); // Add this line
+  const user = cookies.get('user');
+  const docRef = user?.phoneNumber ? doc(db, 'Students', user.phoneNumber) : null;
+  const navigate = useNavigate();
 
   useEffect(() => {
     const checkUserDetails = async () => {
-      const docSnap = await getDoc(docRef);
-      if (docSnap.exists()) {
-        // Document exists, do nothing
+      if (user && user.phoneNumber) {
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists() && docRef != null) {
+        } else {
+          // Document does not exist, navigate to /TID
+          navigate('/');
+        }
       } else {
-        // Document does not exist, navigate to /TID
-        navigate('/'); // Use the navigate function here
+        // User cookie or phoneNumber property is not available, navigate to /TID
+        navigate('/');
       }
     };
 
-    checkUserDetails();
-  }, [docRef, navigate]); // Add navigate to the dependencies array
+    if (docRef) {
+      checkUserDetails();
+    }
+    else{
+      
+      navigate('/Login');
+    }
+  }, [docRef, navigate, user]);
 
   return children;
 };

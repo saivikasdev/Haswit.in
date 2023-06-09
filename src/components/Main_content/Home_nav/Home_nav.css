@@ -73,15 +73,11 @@
 
 @media screen and (max-width: 1600px) {
   .Home_nav {
-    width: 90vw;
+    width: 80vw;
   }
 }
 
 @media screen and (max-width: 1000px) {
-  .Home_nav {
-    width: 80vw;
-    height: 70px;
-  }
 }
 
 @media screen and (max-width: 800px) {

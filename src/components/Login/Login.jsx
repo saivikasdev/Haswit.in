@@ -80,7 +80,7 @@ else{
           cookies.set('user', result.user, { path: '/' });
             console.log(doc)
             console.log(authentication.currentUser.phoneNumber)
-            navigate("/");
+            navigate("/home");
             
           }
           else{
@@ -89,7 +89,7 @@ else{
                className: 'toast-message'
            }).then(()=>{
 
-            navigate('/TID');
+            navigate('/');
            })
             // console.log(result)
             // console.log(result.user)
@@ -98,7 +98,7 @@ else{
             //   Phone: Phone,
             //   Points : 0,
             //   UID : result.user.uid
-            // }).then({
+            // }).then({P
               
 
             // });
@@ -171,7 +171,7 @@ else{
             className="Phone_input"
             placeholder="Enter Your Phone number"
             onChange={set_phone}
-            maxlength="13"
+            maxLength="13"
             minLength="11"
             required
           />
@@ -186,7 +186,7 @@ else{
                 className="OTP_input"
                 placeholder="6 digit OTP"
                 onChange={verifyotp}
-                maxlength="6"
+                maxLength="6"
                 minLength="6"
                 required
 

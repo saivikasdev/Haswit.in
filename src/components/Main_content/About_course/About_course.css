@@ -33,7 +33,7 @@
 {
    .About_course{
       width: 75vw;
-      height: 130vw;
+      height: fit-content;
    }
    
 .About_course_head{

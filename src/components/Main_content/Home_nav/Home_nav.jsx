@@ -26,7 +26,7 @@ const [Old_notifications, setOld_notifications] = useState([]);
   const fetchprofile_pic = async () => {
     const docRef = doc(db, "Students", cookies.get('user').phoneNumber);
     const docSnap = await getDoc(docRef);
-    console.log("Document data:", docSnap.data().profile_pic);
+    // console.log("Document data:", docSnap.data().profile_pic);
     if (docSnap.exists()) {
       setprofile_pic(docSnap.data().profile_pic)
       setpoints(docSnap.data().Points)
@@ -54,7 +54,7 @@ const [Old_notifications, setOld_notifications] = useState([]);
   const fetchNotifications = async () => {
     const docRef = doc(db, "Students", cookies.get('user').phoneNumber);
     const docSnap = await getDoc(docRef);
-    console.log("Document data:", docSnap.data().profile_pic);
+    // console.log("Document data:", docSnap.data().profile_pic);
     if (docSnap.exists()) {
       setOld_notifications(docSnap.data().Notifications)
     } else {
@@ -154,7 +154,7 @@ const [Old_notifications, setOld_notifications] = useState([]);
         
         
         
-        <div className="Notification">
+        <div className="Notification" key={index}>
         {notification.notification}
       </div>
         ))}

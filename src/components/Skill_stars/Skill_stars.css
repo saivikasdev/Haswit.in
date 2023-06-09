@@ -77,6 +77,7 @@
   .Head_container {
     font-size: 3vw;
     padding: 10px;
+    height: fit-content;
   }
   .Complete_sessions {
     width: 40vw;
